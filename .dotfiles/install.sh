@@ -6,13 +6,20 @@ function config {
 	git --git-dir=${HOME}/.dotfiles/ --work-tree=${HOME} $@
 }
 
-mkdir -p ${HOME}/.dotfiles-backup
 config checkout
-if [ $? = 0 ]; then
-	echo "Checked out config."
-else
+
+# Backup existing dotfiles
+if [ $? != 0 ]; then
 	echo "Backing up pre-existing dot files."
-	config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} ${HOME}/.dotfiles-backup/{}
+	config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | while read -r dotfile; do
+		mkdir -p ${HOME}/.dotfiles-backup/$(dirname ${dotfile})
+		mv ${HOME}/${dotfile} ${HOME}/.dotfiles-backup/${dotfile}
+		echo "${dotfile}\t\t\t\tBACKUPED!"
+	done
 	config checkout
 fi
+
+# Track only checked-in files
 config config status.showUntrackedFiles no
+
+echo "Checked out config."
