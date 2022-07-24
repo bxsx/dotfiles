@@ -53,9 +53,10 @@ zstyle ':fzf-tab:complete:vim:*' fzf-preview 'bat --color=always --style=numbers
 zstyle ':fzf-tab:*' fzf-bindings 'shift-tab:toggle+down,space:accept'
 
 # Node.js Version Manager
-# Must be set before loading zsh-nvm plugin
+# Must be set before loading zsh-nvm plugin (which installs `nvm`)
 export NVM_DIR="$HOME/.nvm"
 export NVM_LAZY_LOAD=true
+export NVM_COMPLETION=true
 
 
 plugins=(
@@ -126,9 +127,6 @@ export PATH="$PATH:$GOPATH/bin"
 
 # Perl
 eval "$(perl -I$HOME/.perl5/lib/perl5 -Mlocal::lib=$HOME/.perl5)"
-
-# NVM (more in headers)
-NVM_COMPLETION="$(brew --prefix nvm)/etc/bash_completion.d/nvm"; [ -s $NVM_COMPLETION ] && source $NVM_COMPLETION
 
 # Git
 unalias gsr # disable oh-my-zsh git svn rebase
