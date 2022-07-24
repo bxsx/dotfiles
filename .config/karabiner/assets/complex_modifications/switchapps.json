@@ -1,0 +1,317 @@
+{
+  "title": "Open/Switch apps (F5-F8, Fn+X, etc.)",
+  "rules": [
+    {
+      "description": "F5 - Switch to iTerm (Disabled, via Function keys)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f5",
+            "modifiers": {
+                "optional": [
+                    "caps_lock"
+                ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -aiterm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "F6 - Switch to Safari (Disabled, via Function keys)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f6",
+            "modifiers": {
+                "optional": [
+                    "caps_lock"
+                ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -asafari"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "F7 - Switch to PyCharm (Disabled, via Function keys)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f7",
+            "modifiers": {
+                "optional": [
+                    "caps_lock"
+                ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -apycharm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "F8 - Switch to Telegram (Disabled, via Function keys)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f8",
+            "modifiers": {
+                "optional": [
+                    "caps_lock"
+                ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -atelegram"
+            }
+          ]
+        }
+      ]
+    },
+    {
+        "description": "Fn+I - Switch to iTerm",
+        "manipulators": [
+            {
+                "from": {
+                    "key_code": "i",
+                    "modifiers": {
+                        "mandatory": [
+                            "fn"
+                        ],
+                        "optional": [
+                            "caps_lock"
+                        ]
+                    }
+                },
+                "to": [
+                    {
+                        "shell_command": "open -aiterm"
+                    }
+                ],
+                "type": "basic"
+            }
+        ]
+    },
+    {
+        "description": "Fn+O - Switch to Google Chrome",
+        "manipulators": [
+            {
+                "from": {
+                    "key_code": "o",
+                    "modifiers": {
+                        "mandatory": [
+                            "fn"
+                        ],
+                        "optional": [
+                            "caps_lock"
+                        ]
+                    }
+                },
+                "to": [
+                    {
+                        "shell_command": "open -a'Google Chrome'"
+                    }
+                ],
+                "type": "basic"
+            }
+        ]
+    },
+    {
+        "description": "Fn+S - Switch to Safari",
+        "manipulators": [
+            {
+                "from": {
+                    "key_code": "s",
+                    "modifiers": {
+                        "mandatory": [
+                            "fn"
+                        ],
+                        "optional": [
+                            "caps_lock"
+                        ]
+                    }
+                },
+                "to": [
+                    {
+                        "shell_command": "open -asafari"
+                    }
+                ],
+                "type": "basic"
+            }
+        ]
+    },
+    {
+        "description": "Fn+P - Switch to PyCharm",
+        "manipulators": [
+            {
+                "from": {
+                    "key_code": "p",
+                    "modifiers": {
+                        "mandatory": [
+                            "fn"
+                        ],
+                        "optional": [
+                            "caps_lock"
+                        ]
+                    }
+                },
+                "to": [
+                    {
+                        "shell_command": "open -apycharm"
+                    }
+                ],
+                "type": "basic"
+            }
+        ]
+    },
+    {
+        "description": "Fn+T - Switch to Telegram",
+        "manipulators": [
+            {
+                "from": {
+                    "key_code": "t",
+                    "modifiers": {
+                        "mandatory": [
+                            "fn"
+                        ],
+                        "optional": [
+                            "caps_lock"
+                        ]
+                    }
+                },
+                "to": [
+                    {
+                        "shell_command": "open -atelegram"
+                    }
+                ],
+                "type": "basic"
+            }
+        ]
+    },
+    {
+        "description": "Fn+Y - Switch to Signal",
+        "manipulators": [
+            {
+                "from": {
+                    "key_code": "y",
+                    "modifiers": {
+                        "mandatory": [
+                            "fn"
+                        ],
+                        "optional": [
+                            "caps_lock"
+                        ]
+                    }
+                },
+                "to": [
+                    {
+                        "shell_command": "open -asignal"
+                    }
+                ],
+                "type": "basic"
+            }
+        ]
+    },
+    {
+        "description": "Fn+\\ - Switch to Things",
+        "manipulators": [
+            {
+                "from": {
+                    "key_code": "backslash",
+                    "modifiers": {
+                        "mandatory": [
+                            "fn"
+                        ],
+                        "optional": [
+                            "caps_lock"
+                        ]
+                    }
+                },
+                "to": [
+                    {
+                        "shell_command": "open -aThings3"
+                    }
+                ],
+                "type": "basic"
+            }
+        ]
+    },
+    {
+        "description": "Fn+F8 - Switch to Signal",
+        "manipulators": [
+            {
+                "from": {
+                    "key_code": "f8",
+                    "modifiers": {
+                        "mandatory": [
+                            "fn"
+                        ],
+                        "optional": [
+                            "caps_lock"
+                        ]
+                    }
+                },
+                "to": [
+                    {
+                        "shell_command": "open -asignal"
+                    }
+                ],
+                "type": "basic"
+            }
+        ]
+    },
+    {
+        "description": "Fire up (if needed) Things and open Quick Entry",
+        "manipulators": [
+            {
+                "from": {
+                    "key_code": "spacebar",
+                    "modifiers": {
+                        "mandatory": [
+                            "control"
+                        ],
+                        "optional": [
+                            "caps_lock"
+                        ]
+                    }
+                },
+                "to": [
+                    {
+                        "shell_command": "killall -0 Things3 2>/dev/null || open --hide --background -aThings3"
+                    }
+                ],
+                "to_delayed_action": {
+                    "to_if_invoked": [
+                        {
+                            "key_code": "spacebar",
+                            "modifiers": [
+                                "command",
+                                "option",
+                                "shift"
+                            ]
+                        }
+                    ]
+                },
+                "type": "basic"
+            }
+        ]
+    }
+  ]
+}

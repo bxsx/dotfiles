@@ -1,0 +1,26 @@
+{
+  "title": "Realforce R2 required complex remapping",
+  "rules": [
+    {
+        "description": "[R2] Scroll Lock -> Caps Lock",
+        "manipulators": [
+            {
+                "from": {
+                    "key_code": "scroll_lock",
+                    "modifiers": {
+                        "optional": [
+                            "caps_lock"
+                        ]
+                    }
+                },
+                "to": [
+                    {
+                        "key_code": "caps_lock"
+                    }
+                ],
+                "type": "basic"
+            }
+        ]
+    }
+  ]
+}

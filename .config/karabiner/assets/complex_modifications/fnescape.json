@@ -1,0 +1,57 @@
+{
+  "title": "Esc on single press, Fn on press and hold",
+  "rules": [
+    {
+        "description": "[Mac] Fn to Escape on single press, Fn on press and hold.",
+        "manipulators": [
+            {
+                "from": {
+                    "key_code": "fn",
+                    "modifiers": {
+                        "optional": [
+                            "any"
+                        ]
+                    }
+                },
+                "to_if_alone": [
+                    {
+                        "key_code": "escape"
+                    }
+                ],
+                "to_if_held_down": [
+                    {
+                        "key_code": "fn"
+                    }
+                ],
+                "type": "basic"
+            }
+        ]
+    },
+    {
+        "description": "[R2] CapsLock to Escape on single press, Fn on press and hold.",
+        "manipulators": [
+            {
+                "from": {
+                    "key_code": "caps_lock",
+                    "modifiers": {
+                        "optional": [
+                            "any"
+                        ]
+                    }
+                },
+                "to_if_alone": [
+                    {
+                        "key_code": "escape"
+                    }
+                ],
+                "to_if_held_down": [
+                    {
+                        "key_code": "fn"
+                    }
+                ],
+                "type": "basic"
+            }
+        ]
+    }
+  ]
+}

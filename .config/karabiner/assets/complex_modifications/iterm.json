@@ -1,0 +1,216 @@
+{
+  "title": "iTerm",
+  "rules": [
+    {
+        "description": "iTerm:FZF - SuperX -> Ctrl+T - Search files",
+        "manipulators": [
+            {
+                "conditions": [
+                    {
+                        "bundle_identifiers": [
+                            "^com\\.googlecode\\.iterm2$"
+                        ],
+                        "type": "frontmost_application_if"
+                    }
+                ],
+                "from": {
+                    "key_code": "f15",
+                    "modifiers": {
+                        "optional": [
+                            "caps_lock"
+                        ]
+                    }
+                },
+                "to": {
+                    "key_code": "t",
+                    "modifiers": [
+                        "control"
+                    ]
+                },
+                "type": "basic"
+            }
+        ]
+    },
+    {
+        "description": "iTerm:FZF - Control+SuperX -> Ctrl+R - Search last commands",
+        "manipulators": [
+            {
+                "conditions": [
+                    {
+                        "bundle_identifiers": [
+                            "^com\\.googlecode\\.iterm2$"
+                        ],
+                        "type": "frontmost_application_if"
+                    }
+                ],
+                "from": {
+                    "key_code": "f15",
+                    "modifiers": {
+                        "mandatory": [
+                            "control"
+                        ],
+                        "optional": [
+                            "caps_lock"
+                        ]
+                    }
+                },
+                "to": {
+                    "key_code": "r",
+                    "modifiers": [
+                        "control"
+                    ]
+                },
+                "type": "basic"
+            }
+        ]
+    },
+    {
+        "description": "iTerm:FZF - Fn+SuperX -> Escape(Alt)+C - Change directory",
+        "manipulators": [
+            {
+                "conditions": [
+                    {
+                        "bundle_identifiers": [
+                            "^com\\.googlecode\\.iterm2$"
+                        ],
+                        "type": "frontmost_application_if"
+                    }
+                ],
+                "from": {
+                    "key_code": "f15",
+                    "modifiers": {
+                        "mandatory": [
+                            "fn"
+                        ],
+                        "optional": [
+                            "caps_lock"
+                        ]
+                    }
+                },
+                "to": [
+                    {
+                        "key_code": "escape"
+                    },
+                    {
+                        "key_code": "c"
+                    }
+                ],
+                "type": "basic"
+            }
+        ]
+    },
+    {
+        "description": "iTerm:FZF - Shift+Fn+SuperX -> Escape(Alt)+C - Change directory (global /)",
+        "manipulators": [
+            {
+                "conditions": [
+                    {
+                        "bundle_identifiers": [
+                            "^com\\.googlecode\\.iterm2$"
+                        ],
+                        "type": "frontmost_application_if"
+                    }
+                ],
+                "from": {
+                    "key_code": "f15",
+                    "modifiers": {
+                        "mandatory": [
+                            "fn",
+                            "shift"
+                        ],
+                        "optional": [
+                            "caps_lock"
+                        ]
+                    }
+                },
+                "to": [
+                    {
+                        "key_code": "escape"
+                    },
+                    {
+                        "key_code": "c",
+                        "modifiers": [
+                            "shift"
+                        ]
+                    }
+                ],
+                "type": "basic"
+            }
+        ]
+    },
+    {
+        "description": "iTerm:FZF Fn+X -> Escape(Alt)+C - Change directory",
+        "manipulators": [
+            {
+                "conditions": [
+                    {
+                        "bundle_identifiers": [
+                            "^com\\.googlecode\\.iterm2$"
+                        ],
+                        "type": "frontmost_application_if"
+                    }
+                ],
+                "from": {
+                    "key_code": "x",
+                    "modifiers": {
+                        "mandatory": [
+                            "fn"
+                        ],
+                        "optional": [
+                            "caps_lock"
+                        ]
+                    }
+                },
+                "to": [
+                    {
+                        "key_code": "escape"
+                    },
+                    {
+                        "key_code": "c"
+                    }
+                ],
+                "type": "basic"
+            }
+        ]
+    },
+    {
+        "description": "iTerm:FZF Shift+Fn+X -> Escape(Alt)+C - Change directory (global /)",
+        "manipulators": [
+            {
+                "conditions": [
+                    {
+                        "bundle_identifiers": [
+                            "^com\\.googlecode\\.iterm2$"
+                        ],
+                        "type": "frontmost_application_if"
+                    }
+                ],
+                "from": {
+                    "key_code": "x",
+                    "modifiers": {
+                        "mandatory": [
+                            "fn",
+                            "shift"
+                        ],
+                        "optional": [
+                            "caps_lock"
+                        ]
+                    }
+                },
+                "to": [
+                    {
+                        "key_code": "escape"
+                    },
+                    {
+                        "key_code": "c",
+                        "modifiers": [
+                            "shift"
+                        ]
+                    }
+                ],
+                "type": "basic"
+            }
+        ]
+    }
+  ]
+}
