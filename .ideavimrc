@@ -1,0 +1,15 @@
+let mapleader = " "
+
+nnoremap <leader>g gd
+nnoremap <leader>f :action CollapseSelection<CR>
+nnoremap <leader>h :set hlsearch!<CR>
+
+nnoremap <leader>b :action ActivateProjectToolWindow<CR>
+nnoremap <leader>a :action FindInPath<CR>
+nnoremap <leader>e :action SearchEverywhere<CR>
+nnoremap <leader>t :action FileStructurePopup<CR>
+
+nnoremap <leader>u :action FindUsages<CR>
+nnoremap <leader>[ :action EditorCodeBlockStart<CR>
+nnoremap <leader>] :action EditorCodeBlockEnd<CR>
+nnoremap <leader>r :action Run<CR>

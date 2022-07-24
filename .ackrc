@@ -1,0 +1,3 @@
+--smart-case
+#--python
+--ignore-dir=.mypy_cache

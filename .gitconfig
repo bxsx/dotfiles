@@ -1,0 +1,26 @@
+[user]
+	name = Bart Skowron
+	email = bxsx@bartskowron.com
+[includeIf "gitdir:~/+ext/"]
+	path = .gitconfig-external
+[fetch]
+	prune = true
+[core]
+	editor = vim
+	#pager = less -S# E:--quit-at-eof S:--chop-long-lines
+	pager = bat --plain
+	excludesfile = ~/.gitignore
+[alias]
+	tlog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[pager]
+	#blame = less -S # E:--quit-at-eof S:--chop-long-lines
+	blame = bat --plain
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[rebase]
+	autoStash = true
+[init]
+	defaultBranch = main
