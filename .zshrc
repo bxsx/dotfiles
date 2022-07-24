@@ -42,9 +42,15 @@ zstyle ':completion:*:descriptions' format '[%d]'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # switch group using `,` and `.`
 zstyle ':fzf-tab:*' switch-group ',' '.'
-#  fzf-preview for tab completation
+# remove redudant prefix for each item
+zstyle ':fzf-tab:*' prefix ''
+# fzf-preview for tab completation
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
 zstyle ':fzf-tab:complete:vim:*' fzf-preview 'bat --color=always --style=numbers $realpath'
+# key-bindings:
+# - restore default multiselect fzf binding (<tab>)
+# - accept selection on <space> (and <enter>)
+zstyle ':fzf-tab:*' fzf-bindings 'tab:toggle+down,space:accept'
 
 # Node.js Version Manager
 # Must be set before loading zsh-nvm plugin
