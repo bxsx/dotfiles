@@ -21,5 +21,7 @@ fi
 
 # Track only checked-in files
 config config status.showUntrackedFiles no
+# Enable rebase policy
+config config pull.rebase true
 
 echo "Checked out config."
