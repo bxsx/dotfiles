@@ -1,8 +1,6 @@
 [user]
 	name = Bart Skowron
 	email = bxsx@bartskowron.com
-[includeIf "gitdir:~/+ext/"]
-	path = .gitconfig-external
 [fetch]
 	prune = true
 [core]
@@ -24,3 +22,5 @@
 	autoStash = true
 [init]
 	defaultBranch = main
+[include]
+        path = .gitconfig-external

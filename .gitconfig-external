@@ -1,0 +1,25 @@
+# Global external settings
+#
+# This settings *override* ~/.gitconfig
+# - leave blank on a private computer
+# - set global external settings on an external computer
+
+
+;
+;
+; Settings placeholder
+;
+;
+
+
+# Local external settings
+#
+# Use ~/.gitconfig-ext for external projects on a private computer
+[includeIf "gitdir:~/+ext/"]
+	path = .gitconfig-ext
+
+# Local private settings
+#
+# Use ~/.gitconfig-private for private/opensource projects on an external computer
+[includeIf "gitdir:~/+prv/"]
+	path = .gitconfig-private
