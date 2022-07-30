@@ -1,0 +1,8 @@
+{
+  "ServerApp": {
+    "open_browser": false
+  },
+  "ContentsManager": {
+    "allow_hidden": true
+  }
+}

@@ -212,7 +212,7 @@ if command -v duf &> /dev/null; then
 fi
 
 # Shortcuts
-alias wiki="jupyter-lab --no-browser"
+alias wiki="jupyter-lab"
 alias wikiinit="jupytext --set-formats ipynb,py"
 alias garminsync="garminsync $HOME/Documents/bike/activities $DEVDIR/opensource/garmin-connect-export prod"
 alias dnscheck="dig @8.8.8.8 \$1 ANY +noall +answer"
