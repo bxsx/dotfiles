@@ -205,14 +205,14 @@ let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exac
 let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
 nnoremap <leader>b :call NERDTreeFindOrToggle()<CR>
 function! NERDTreeFindOrToggle()
-	if exists("g:NERDTree") && g:NERDTree.IsOpen()
-		execute("NERDTreeClose")
-	else
-		let s = execute("NERDTreeFind")
-		if strtrans(s) == "^@NERDTree: no file for the current buffer"
-			execute("NERDTreeToggle")
-		endif
-	endif
+  if exists("g:NERDTree") && g:NERDTree.IsOpen()
+    execute("NERDTreeClose")
+  else
+    let s = execute("NERDTreeFind")
+    if strtrans(s) == "^@NERDTree: no file for the current buffer"
+      execute("NERDTreeToggle")
+    endif
+  endif
 endfunction
 
 
@@ -256,7 +256,7 @@ function! FZFWithDevIcons()
 
   let counter = len(split(system($FZF_DEFAULT_COMMAND . ' --max-results ' . l:files_limit), '\n'))
   if counter >= l:files_limit
-	  call fzf#run(fzf#wrap({}))
+    call fzf#run(fzf#wrap({}))
   else
     let opts = fzf#wrap({})
     let opts.source = <sid>files()
@@ -312,23 +312,23 @@ augroup END
 "
 " Store .swp files in ~/.vim/swap
 if filewritable("$HOME/.vim/swap") != 2 && (has("unix") || has("win32unix"))
-	call system("mkdir -p -m 0700 $HOME/.vim/swap")
+  call system("mkdir -p -m 0700 $HOME/.vim/swap")
 endif
 set dir=$HOME/.vim/swap
 
 function! s:DeleteOldBackups()
-	let l:DayTreshold = 45
-	let l:Old = (60 * 60 * 24 * l:DayTreshold)
-	let l:BackupFiles = split(glob(&backupdir."*", 1)."\n".glob(&backupdir.".[^.]*",1), "\n")
-	let l:Now = localtime()
+  let l:DayTreshold = 45
+  let l:Old = (60 * 60 * 24 * l:DayTreshold)
+  let l:BackupFiles = split(glob(&backupdir."*", 1)."\n".glob(&backupdir.".[^.]*",1), "\n")
+  let l:Now = localtime()
 
-	for l:File in l:BackupFiles
-		if (l:Now - getftime(l:File)) > l:Old
-			echon "- Deleting backup file (older than " l:DayTreshold " days): " l:File
-			call delete(l:File)
-			echon "\t[Done]\n"
-		endif
-	endfor
+  for l:File in l:BackupFiles
+    if (l:Now - getftime(l:File)) > l:Old
+      echon "- Deleting backup file (older than " l:DayTreshold " days): " l:File
+      call delete(l:File)
+      echon "\t[Done]\n"
+    endif
+  endfor
 endfunction
 
 " Delete backups over 45 days old on exit
@@ -339,7 +339,7 @@ au VimLeave * call <SID>DeleteOldBackups()
 
 " Store .bak files in ~/.vim/swap
 if filewritable("$HOME/.vim/backup") != 2 && (has("unix") || has("win32unix"))
-	call system("mkdir -p -m 0700 $HOME/.vim/backup")
+  call system("mkdir -p -m 0700 $HOME/.vim/backup")
 endif
 set backup
 set backupdir=$HOME/.vim/backup// " double trailing slash to rename backup file with full path
