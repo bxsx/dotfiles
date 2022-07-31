@@ -17,7 +17,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'mileszs/ack.vim'
 Plugin 'preservim/tagbar'
-"Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim'}
 Plugin 'ryanoasis/vim-devicons'
