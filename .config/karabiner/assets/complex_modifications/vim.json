@@ -2,7 +2,7 @@
   "title": "Vi Style Arrows",
   "rules": [
     {
-      "description": "Change Control + h/j/k/l to Arrows (Disabled)",
+      "description": "Change Control + h/j/k/l to Arrows",
       "manipulators": [
         {
           "type": "basic",

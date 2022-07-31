@@ -97,7 +97,7 @@
                         ]
                     },
                     {
-                        "description": "Change Control + h/j/k/l to Arrows (Disabled)",
+                        "description": "Change Control + h/j/k/l to Arrows",
                         "manipulators": [
                             {
                                 "from": {
