@@ -720,7 +720,7 @@
                         ]
                     },
                     {
-                        "description": "Fn+T - Switch to Telegram",
+                        "description": "Fn+T - Switch to Telegram (or Slack)",
                         "manipulators": [
                             {
                                 "from": {
@@ -736,7 +736,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -atelegram"
+                                        "shell_command": "open -atelegram 2>/dev/null || open -aslack"
                                     }
                                 ],
                                 "type": "basic"
@@ -1380,7 +1380,7 @@
                             },
                             "to": [
                                 {
-                                    "shell_command": "open -atelegram"
+                                    "shell_command": "open -atelegram 2>/dev/null || open -aslack"
                                 }
                             ]
                         },
