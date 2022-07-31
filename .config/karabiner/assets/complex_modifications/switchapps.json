@@ -254,7 +254,7 @@
         ]
     },
     {
-        "description": "Fire up (if needed) Things and open Quick Entry",
+        "description": "Ctrl+spacebar - Fire up (if needed) Things and open Quick Entry",
         "manipulators": [
             {
                 "from": {
