@@ -1247,7 +1247,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "right_cmd"
+                                    "key_code": "right_command"
                                 },
                                 "to": {
                                     "key_code": "t"
