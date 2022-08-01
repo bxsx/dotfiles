@@ -1,0 +1,29 @@
+{
+  "title": "macOS services",
+  "rules": [
+    {
+      "description": "[R2] Fn+F4 - Toggle Focus Mode",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f4",
+            "modifiers": {
+                "mandatory": [
+                    "fn"
+                ],
+                "optional": [
+                    "caps_lock"
+                ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f16"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

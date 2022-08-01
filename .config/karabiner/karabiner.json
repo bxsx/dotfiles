@@ -624,6 +624,30 @@
                         ]
                     },
                     {
+                        "description": "[R2] Fn+F4 - Toggle Focus Mode",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "f4",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "f16"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Fn+T - Switch to Telegram (or Slack)",
                         "manipulators": [
                             {
