@@ -87,7 +87,29 @@ alias config="git --git-dir=${HOME}/.dotfiles/ --work-tree=${HOME}"
 
 export DEVDIR="$HOME/+dev"
 export PATH="$PATH:$DEVDIR/scripts/bin"
+export CDPATH=.:..:...:$HOME:$DEVDIR
 #export ARCHFLAGS="-arch arm64"
+
+#function cd() {
+#        if [ "$#" = "0" ]; then
+#                pushd ${HOME} > /dev/null
+#        elif [ -f "${1}" ]; then
+#                ${EDITOR} {$1}
+#        else
+#                pushd "$1" > /dev/null
+#        fi
+#}
+
+#function bd() {
+#        if [ "$#" = "0" ]; then
+#                popd > /dev/null
+#        else
+#                for i in $(seq ${1})
+#                do
+#                        popd > /dev/null
+#                done
+#        fi
+#}
 
 # iTerm
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
