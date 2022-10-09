@@ -204,6 +204,10 @@ fi
 
 
 # Other
+export HISTSIZE=1000000
+export SAVEHIST=$HISTSIZE
+# setopt hist_ignore_all_dups
+# setopt hist_ignore_space
 export EDITOR=vim
 export LESS="-e -F -X $LESS" # e:--quit-at-eof F:--quit-if-one-screen X:--no-init
 export LANG="en_US.UTF-8"
