@@ -224,6 +224,7 @@ eval "$(direnv hook zsh)"
 alias py=python
 alias ip=ipython
 alias dc=docker-compose
+alias k=kubectl
 alias colordiff="colordiff -u"
 alias du="du -h"
 alias htop="sudo htop"
