@@ -124,10 +124,10 @@ fi
 # - use --with-pydebug to compile python in debug mode.
 #alias pyconfigure_debug="./configure --cache-file=../python-config.cache --with-pydebug CFLAGS=-O0 --with-system-expat --with-system-ffi"
 alias makepy="make clean && \
-              PKG_CONFIG_PATH=\"$(brew --prefix tcl-tk)/lib/pkgconfig\" \
-              LDFLAGS=\"-L$(brew --prefix gdbm)/lib\" \
-              CFLAGS=\"-I$(brew --prefix gdbm)/include\" \
-              ./configure --with-pydebug --with-openssl=$(brew --prefix openssl@1.1) && \
+	      PKG_CONFIG_PATH=\"$(brew --prefix tcl-tk)/lib/pkgconfig\" \
+	      LDFLAGS=\"-L$(brew --prefix gdbm)/lib\" \
+	      CFLAGS=\"-I$(brew --prefix gdbm)/include\" \
+	      ./configure --with-pydebug --with-openssl=$(brew --prefix openssl@1.1) && \
 	      make -s -j$(python3 -c 'import os; print(os.cpu_count() + 2)')"
 
 # Go
