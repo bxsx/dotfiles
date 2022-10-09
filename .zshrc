@@ -179,7 +179,7 @@ FZF_EXCLUDED="-E .git -E .mypy_cache -E .pytest_cache -E __pycache__ -E '*.pyc'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND -I $FZF_EXCLUDED"
 export FZF_CTRL_T_OPTS="--preview='bat --color=always --style=numbers {}'"
 
-export FZF_ALT_C_COMMAND="fd --type d --color=always -I $FZF_EXCLUDED"
+export FZF_ALT_C_COMMAND="fd --type d --hidden --color=always -I $FZF_EXCLUDED"
 export FZF_ALT_C_OPTS="--preview='exa -1 --color=always {}'"
 
 
