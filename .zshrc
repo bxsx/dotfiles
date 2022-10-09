@@ -29,21 +29,25 @@ COMPLETION_WAITING_DOTS="true"
 zstyle ':omz:update' mode reminder
 zstyle ':omz:update' frequency 33
 
+# XXX: bez LS_COLORS np. w Downloads (.pdf .mov) nie sa kolorowane
+export LS_COLORS="*.arw=38;5;133:*.bmp=38;5;133:*.cbr=38;5;133:*.cbz=38;5;133:*.cr2=38;5;133:*.dvi=38;5;133:*.eps=38;5;133:*.gif=38;5;133:*.heif=38;5;133:*.ico=38;5;133:*.jpeg=38;5;133:*.jpg=38;5;133:*.nef=38;5;133:*.orf=38;5;133:*.pbm=38;5;133:*.pgm=38;5;133:*.png=38;5;133:*.pnm=38;5;133:*.ppm=38;5;133:*.ps=38;5;133:*.raw=38;5;133:*.stl=38;5;133:*.svg=38;5;133:*.tif=38;5;133:*.tiff=38;5;133:*.webp=38;5;133:*.xpm=38;5;133:*.avi=38;5;135:*.flv=38;5;135:*.heic=38;5;135:*.m2ts=38;5;135:*.m2v=38;5;135:*.mkv=38;5;135:*.mov=38;5;135:*.mp4=38;5;135:*.mpeg=38;5;135:*.mpg=38;5;135:*.ogm=38;5;135:*.ogv=38;5;135:*.ts=38;5;135:*.vob=38;5;135:*.webm=38;5;135:*.wmvm=38;5;135:*.djvu=38;5;105:*.doc=38;5;105:*.docx=38;5;105:*.dvi=38;5;105:*.eml=38;5;105:*.eps=38;5;105:*.fotd=38;5;105:*.key=38;5;105:*.odp=38;5;105:*.odt=38;5;105:*.pdf=38;5;105:*.ppt=38;5;105:*.pptx=38;5;105:*.rtf=38;5;105:*.xls=38;5;105:*.xlsx=38;5;105:*.aac=38;5;92:*.alac=38;5;92:*.ape=38;5;92:*.flac=38;5;92:*.m4a=38;5;92:*.mka=38;5;92:*.mp3=38;5;92:*.ogg=38;5;92:*.opus=38;5;92:*.wav=38;5;92:*.wma=38;5;92:*.7z=31:*.a=31:*.ar=31:*.bz2=31:*.deb=31:*.dmg=31:*.gz=31:*.iso=31:*.lzma=31:*.par=31:*.rar=31:*.rpm=31:*.tar=31:*.tc=31:*.tgz=31:*.txz=31:*.xz=31:*.z=31:*.Z=31:*.zip=31:*.zst=31:*.asc=38;5;109:*.enc=38;5;109:*.gpg=38;5;109:*.p12=38;5;109:*.pfx=38;5;109:*.pgp=38;5;109:*.sig=38;5;109:*.signature=38;5;109:*.bak=38;5;244:*.bk=38;5;244:*.swn=38;5;244:*.swo=38;5;244:*.swp=38;5;244:*.tmp=38;5;244:*.~=38;5;244:pi=33:cd=33:bd=33:di=34;1:so=36:or=36:ln=36:ex=32;1:"
+
 
 ### Custom required pre-OMZ! init configuration
 # Must be set before sourcing Oh-my-zsh
+# XXX: napewno? zstyle nie powinien byc po? (patrz list-colors)
 # disable sort when completing `git checkout`
 zstyle ':completion:*:git-checkout:*' sort false
 # set descriptions format to enable group support
 zstyle ':completion:*:descriptions' format '[%d]'
 # set list-colors to enable filename colorizing
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} # need to setup LS_COLORS first (from exa + exa --icons)
 # show groups for cd/pushd
 zstyle ':completion:*:complete:(cd|pushd):*' tag-order 'local-directories named-directories path-directories'
 # switch group using `,` and `.`
 zstyle ':fzf-tab:*' switch-group ',' '.'
 # remove redudant prefix for each item
-zstyle ':fzf-tab:*' prefix ''
+zstyle ':fzf-tab:*' prefix '' # XXX moz byc problematyczne przy kolorach
 # fzf-preview for tab completation
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --icons --color=always $realpath'
 zstyle ':fzf-tab:complete:vim:*' fzf-preview 'bat --color=always --style=numbers $realpath'
@@ -70,9 +74,10 @@ plugins=(
 	poetry
 	zsh-nvm
 	timewarrior
-	fzf-tab
 	zsh-autosuggestions
 	zsh-syntax-highlighting
+	# XXX: test to load as last (to fix bug with zsh-autosuggestions)
+	fzf-tab
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -271,6 +276,11 @@ function omz-update-custom() {
 	done
 	popd
 }
+
+# XXX: bez LS_COLORS np. w Downloads (.pdf .mov) nie sa kolorowane
+export LS_COLORS="*.arw=38;5;133:*.bmp=38;5;133:*.cbr=38;5;133:*.cbz=38;5;133:*.cr2=38;5;133:*.dvi=38;5;133:*.eps=38;5;133:*.gif=38;5;133:*.heif=38;5;133:*.ico=38;5;133:*.jpeg=38;5;133:*.jpg=38;5;133:*.nef=38;5;133:*.orf=38;5;133:*.pbm=38;5;133:*.pgm=38;5;133:*.png=38;5;133:*.pnm=38;5;133:*.ppm=38;5;133:*.ps=38;5;133:*.raw=38;5;133:*.stl=38;5;133:*.svg=38;5;133:*.tif=38;5;133:*.tiff=38;5;133:*.webp=38;5;133:*.xpm=38;5;133:*.avi=38;5;135:*.flv=38;5;135:*.heic=38;5;135:*.m2ts=38;5;135:*.m2v=38;5;135:*.mkv=38;5;135:*.mov=38;5;135:*.mp4=38;5;135:*.mpeg=38;5;135:*.mpg=38;5;135:*.ogm=38;5;135:*.ogv=38;5;135:*.ts=38;5;135:*.vob=38;5;135:*.webm=38;5;135:*.wmvm=38;5;135:*.djvu=38;5;105:*.doc=38;5;105:*.docx=38;5;105:*.dvi=38;5;105:*.eml=38;5;105:*.eps=38;5;105:*.fotd=38;5;105:*.key=38;5;105:*.odp=38;5;105:*.odt=38;5;105:*.pdf=38;5;105:*.ppt=38;5;105:*.pptx=38;5;105:*.rtf=38;5;105:*.xls=38;5;105:*.xlsx=38;5;105:*.aac=38;5;92:*.alac=38;5;92:*.ape=38;5;92:*.flac=38;5;92:*.m4a=38;5;92:*.mka=38;5;92:*.mp3=38;5;92:*.ogg=38;5;92:*.opus=38;5;92:*.wav=38;5;92:*.wma=38;5;92:*.7z=31:*.a=31:*.ar=31:*.bz2=31:*.deb=31:*.dmg=31:*.gz=31:*.iso=31:*.lzma=31:*.par=31:*.rar=31:*.rpm=31:*.tar=31:*.tc=31:*.tgz=31:*.txz=31:*.xz=31:*.z=31:*.Z=31:*.zip=31:*.zst=31:*.asc=38;5;109:*.enc=38;5;109:*.gpg=38;5;109:*.p12=38;5;109:*.pfx=38;5;109:*.pgp=38;5;109:*.sig=38;5;109:*.signature=38;5;109:*.bak=38;5;244:*.bk=38;5;244:*.swn=38;5;244:*.swo=38;5;244:*.swp=38;5;244:*.tmp=38;5;244:*.~=38;5;244:pi=33:cd=33:bd=33:di=34;1:so=36:or=36:ln=36:ex=32;1:"
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} # need to setup LS_COLORS first (from exa + exa --icons)
+zstyle ':completion:*:*:kill:*' list-colors '=(#b) #([0-9]#)*( *[a-z])*=34=31=33'
 
 # External configs
 [[ -f ~/.zshrc-external ]] && source ~/.zshrc-external
