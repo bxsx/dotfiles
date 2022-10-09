@@ -23,6 +23,54 @@
       ]
     },
     {
+      "description": "[R2] Ctrl+F5 - Open a new iTerm window",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f5",
+            "modifiers": {
+                "mandatory": [
+                    "control"
+                ],
+                "optional": [
+                    "caps_lock"
+                ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "osascript $HOME/+dev/scripts/bin/iterm-new-window"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[R2] Fn+F5 - Open a new iTerm window",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f5",
+            "modifiers": {
+                "mandatory": [
+                    "fn"
+                ],
+                "optional": [
+                    "caps_lock"
+                ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "osascript $HOME/+dev/scripts/bin/iterm-new-window"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "F6 - Switch to a default web browser (Disabled, R2 via Function keys)",
       "manipulators": [
         {
@@ -84,6 +132,30 @@
           ]
         }
       ]
+    },
+    {
+        "description": "[R2] Fn+F8 - Switch to Signal",
+        "manipulators": [
+            {
+                "from": {
+                    "key_code": "f8",
+                    "modifiers": {
+                        "mandatory": [
+                            "fn"
+                        ],
+                        "optional": [
+                            "caps_lock"
+                        ]
+                    }
+                },
+                "to": [
+                    {
+                        "shell_command": "open -asignal"
+                    }
+                ],
+                "type": "basic"
+            }
+        ]
     },
     {
         "description": "Fn+T - Switch to Telegram (or Slack)",
@@ -182,6 +254,31 @@
         ]
     },
     {
+        "description": "Fn+Ctrl+I - Open a new iTerm window",
+        "manipulators": [
+            {
+                "from": {
+                    "key_code": "i",
+                    "modifiers": {
+                        "mandatory": [
+                            "fn",
+                            "control"
+                        ],
+                        "optional": [
+                            "caps_lock"
+                        ]
+                    }
+                },
+                "to": [
+                    {
+                        "shell_command": "osascript $HOME/+dev/scripts/bin/iterm-new-window"
+                    }
+                ],
+                "type": "basic"
+            }
+        ]
+    },
+    {
         "description": "Fn+O - Switch to a default web browser",
         "manipulators": [
             {
@@ -247,30 +344,6 @@
                 "to": [
                     {
                         "shell_command": "open -aThings3"
-                    }
-                ],
-                "type": "basic"
-            }
-        ]
-    },
-    {
-        "description": "Fn+F8 - Switch to Signal",
-        "manipulators": [
-            {
-                "from": {
-                    "key_code": "f8",
-                    "modifiers": {
-                        "mandatory": [
-                            "fn"
-                        ],
-                        "optional": [
-                            "caps_lock"
-                        ]
-                    }
-                },
-                "to": [
-                    {
-                        "shell_command": "open -asignal"
                     }
                 ],
                 "type": "basic"
