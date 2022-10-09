@@ -238,11 +238,11 @@ if command -v bat &> /dev/null; then
 fi
 if command -v exa &> /dev/null; then
 	alias ls="exa"
-	alias ll="exa -lg"
+	alias lt="ls --tree --icons"
 	alias la="exa -a"
+	alias lat="la --tree --icons"
+	alias ll="exa -lg --icons"
 	alias llt="ll --tree"
-	alias lat="la --tree"
-	alias lt="ls --tree"
 	alias l="ll -a"
 fi
 if command -v duf &> /dev/null; then
