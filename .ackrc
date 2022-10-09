@@ -1,3 +1,4 @@
 --smart-case
 #--python
 --ignore-dir=.mypy_cache
+--ignore-dir=.garden
