@@ -276,6 +276,8 @@ endfunction
 " GitGutter
 nmap ]h <Plug>(GitGutterNextHunk)
 nmap [h <Plug>(GitGutterPrevHunk)
+nmap <leader>ha <Plug>(GitGutterStageHunk)
+nmap <leader>hr <Plug>(GitGutterUndoHunk)
 nnoremap <leader>hf :GitGutterFold<CR>
 nnoremap <leader>hh :GitGutterLineHighlightsToggle<CR>
 
