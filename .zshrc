@@ -93,6 +93,7 @@ export PATH="$PATH:$DEVDIR/scripts/bin"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Homebrew
+export HOMEBREW_NO_ENV_HINTS=true
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 ## Python
