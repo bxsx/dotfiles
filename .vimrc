@@ -9,20 +9,23 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end.
-Plugin 'vim-scripts/indentpython.vim'
-Plugin 'fatih/vim-go'
-Bundle 'Valloric/YouCompleteMe'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'scrooloose/nerdtree'
+Plugin 'luochen1990/rainbow'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim'}
+"Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline-themes'
+Bundle 'Valloric/YouCompleteMe'
+Plugin 'preservim/nerdcommenter'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plugin 'mileszs/ack.vim'
+Plugin 'scrooloose/nerdtree'
 Plugin 'preservim/tagbar'
+Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim'}
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'luochen1990/rainbow'
-Plugin 'preservim/nerdcommenter'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'fatih/vim-go'
+Plugin 'hashivim/vim-terraform'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -178,6 +181,7 @@ let g:Powerline_symbols = 'fancy'
 set t_Co=256
 set laststatus=2
 set noshowmode
+let g:airline_powerline_fonts = 1
 
 
 " Ack
@@ -306,6 +310,11 @@ augroup SignColumnToggleTrigger
   autocmd BufEnter,BufWinEnter * call SignColumnToggleTrigger()
   autocmd User GitGutter call SignColumnToggleTrigger()
 augroup END
+
+
+" vim-go
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
 
 
 " Swap & backup files
