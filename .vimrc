@@ -46,8 +46,6 @@ call togglebg#map("<F5>")
 "let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
-" Unset background color to use iTerm background color instead
-highlight Normal ctermbg=NONE
 
 
 " Change cursor shape between insert and normal mode in iTerm2.app
@@ -72,6 +70,9 @@ set scrolloff=5
 " Syntax highlighting
 let python_highlight_all=1
 syntax on
+" Unset background color to use iTerm background color instead
+" (must be set after enabling syntax highlighting)
+highlight Normal ctermbg=NONE
 " Highlight matching () {} []
 set showmatch
 let g:rainbow_active = 1
