@@ -40,12 +40,14 @@ zstyle ':completion:*:git-checkout:*' sort false
 zstyle ':completion:*:descriptions' format '[%d]'
 # set list-colors to enable filename colorizing
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# show groups for cd/pushd
+zstyle ':completion:*:complete:(cd|pushd):*' tag-order 'local-directories named-directories path-directories'
 # switch group using `,` and `.`
 zstyle ':fzf-tab:*' switch-group ',' '.'
 # remove redudant prefix for each item
 zstyle ':fzf-tab:*' prefix ''
 # fzf-preview for tab completation
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --icons --color=always $realpath'
 zstyle ':fzf-tab:complete:vim:*' fzf-preview 'bat --color=always --style=numbers $realpath'
 # key-bindings:
 # - restore default multiselect fzf binding (<tab>)
