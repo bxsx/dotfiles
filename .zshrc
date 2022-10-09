@@ -73,7 +73,12 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10' # fix invisible color
+#export CLICOLOR=1
+#export TERM=xterm-256color
+
+# fix invisible colors
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=fg=10
+export ZSH_HIGHLIGHT_STYLES[comment]=fg=8
 
 
 ### User configuration
