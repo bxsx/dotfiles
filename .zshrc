@@ -95,6 +95,9 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # Homebrew
 export HOMEBREW_NO_ENV_HINTS=true
 eval "$(/opt/homebrew/bin/brew shellenv)"
+# Replace POSIX sed with GNU sed (should help fzf/fzf-tab?)
+SEDPATH=$(brew --prefix gnu-sed) && test -d $SEDPATH && export PATH="$SEDPATH/libexec/gnubin:$PATH"
+unset SEDPATH
 
 ## Python
 # PIPX
