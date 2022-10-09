@@ -2,7 +2,7 @@
   "title": "Open/Switch apps (F5-F8, Fn+X, etc.)",
   "rules": [
     {
-      "description": "F5 - Switch to iTerm (Disabled, via Function keys)",
+      "description": "F5 - Switch to iTerm (Disabled, R2 via Function keys)",
       "manipulators": [
         {
           "type": "basic",
@@ -23,7 +23,7 @@
       ]
     },
     {
-      "description": "F6 - Switch to Safari (Disabled, via Function keys)",
+      "description": "F6 - Switch to a default web browser (Disabled, R2 via Function keys)",
       "manipulators": [
         {
           "type": "basic",
@@ -37,14 +37,14 @@
           },
           "to": [
             {
-              "shell_command": "open -asafari"
+              "shell_command": "osascript -e \"tell application id \"$(plutil -p ~/Library/Preferences/com.apple.LaunchServices/com.apple.launchservices.secure.plist | grep https -B1 | head -1 | awk {'print $3'})\"\" -e 'activate' -e 'end tell'"
             }
           ]
         }
       ]
     },
     {
-      "description": "F7 - Switch to PyCharm (Disabled, via Function keys)",
+      "description": "F7 - Switch to PyCharm (Disabled, R2 via Function keys)",
       "manipulators": [
         {
           "type": "basic",
@@ -65,7 +65,7 @@
       ]
     },
     {
-      "description": "F8 - Switch to Telegram (Disabled, via Function keys)",
+      "description": "F8 - Switch to Telegram (or Slack) (Disabled, R2 via Function keys)",
       "manipulators": [
         {
           "type": "basic",
@@ -79,7 +79,7 @@
           },
           "to": [
             {
-              "shell_command": "open -atelegram"
+              "shell_command": "open -atelegram 2>/dev/null || open -aslack"
             }
           ]
         }
