@@ -192,6 +192,7 @@ alias dc=docker-compose
 alias colordiff="colordiff -u"
 alias du="du -h"
 alias htop="sudo htop"
+alias nproc="sysctl -n hw.logicalcpu"
 
 if command -v bat &> /dev/null; then
 	export BAT_THEME="Solarized (dark)"
