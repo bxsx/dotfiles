@@ -52,7 +52,9 @@ zstyle ':fzf-tab:complete:vim:*' fzf-preview 'bat --color=always --style=numbers
 # key-bindings:
 # - restore default multiselect fzf binding (<tab>)
 # - accept selection on <space> (and <enter>)
-zstyle ':fzf-tab:*' fzf-bindings 'shift-tab:toggle+down,space:accept'
+# - accept selection and continue in the sub-path (<\>)
+zstyle ':fzf-tab:complete:*' fzf-bindings 'shift-tab:toggle+down,space:accept'
+zstyle ':fzf-tab:complete:*' continuous-trigger '\'
 
 # Node.js Version Manager
 # Must be set before loading zsh-nvm plugin (which installs `nvm`)
