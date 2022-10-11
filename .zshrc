@@ -260,6 +260,16 @@ alias garminsync="garminsync $HOME/Documents/bike/activities $DEVDIR/opensource/
 alias dnscheck="dig @8.8.8.8 \$1 ANY +noall +answer"
 alias airplayrestart="sudo killall coreaudiod AirPlayXPCHelper"
 
+function omz-update-custom() {
+	pushd ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}
+	for plugin in plugins/*/ themes/*/; do
+		if [ -d "$plugin/.git" ]; then
+			printf "${YELLOW}%s${RESET}\n" "${plugin%/}"
+			git -C "$plugin" pull
+		fi
+	done
+	popd
+}
 
 # External configs
 [ -f ~/.zshrc-external ] && source ~/.zshrc-external
