@@ -167,6 +167,7 @@ eval "$(perl -I$HOME/.perl5/lib/perl5 -Mlocal::lib=$HOME/.perl5)"
 unalias gsr # disable oh-my-zsh git svn rebase
 unalias gsd # disable oh-my-zsh git svn dcommit
 alias glf="git log --oneline | fzf --multi --preview 'git show {+1} --color=always'"
+alias gcof="glf | cut -d' ' -f1 | xargs git checkout"
 alias grhs="git reset --soft"
 alias grhs1="git reset --soft HEAD~1"
 alias gbv="git branch -v"
