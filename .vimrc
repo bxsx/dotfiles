@@ -118,6 +118,9 @@ nnoremap <leader>FF zR
 
 " Auto-complete
 let g:ycm_autoclose_preview_window_after_completion=1
+
+
+" Go to definition/declaration
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 
@@ -349,7 +352,7 @@ au VimLeave * call <SID>DeleteOldBackups()
 " Timestamped backups
 "au BufWritePre * let &backupext = '.bak' . localtime()
 
-" Store .bak files in ~/.vim/swap
+" Store .bak files in ~/.vim/backup
 if filewritable("$HOME/.vim/backup") != 2 && (has("unix") || has("win32unix"))
   call system("mkdir -p -m 0700 $HOME/.vim/backup")
 endif
