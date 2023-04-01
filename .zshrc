@@ -233,6 +233,7 @@ alias k=kubectl
 alias colordiff="colordiff -u"
 alias worddiff="git diff -U0 --word-diff --no-index --"
 alias du="du -h"
+alias ncdu="ncdu --color dark"
 alias htop="sudo htop"
 alias nproc="sysctl -n hw.logicalcpu"
 
