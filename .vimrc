@@ -177,6 +177,13 @@ au Filetype json set
     \ expandtab
     \ autoindent
 
+au Filetype proto set
+    \ tabstop=2
+    \ softtabstop=2
+    \ shiftwidth=2
+    \ textwidth=80
+    \ expandtab
+    \ smartindent
 
 " Powerline
 set guifont=MesloLGS\ NF:h13
