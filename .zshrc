@@ -10,6 +10,7 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 export ZSH_CUSTOM="$ZSH/custom"
 
+HIST_STAMPS="yyyy-mm-dd"
 COMPLETION_WAITING_DOTS="true"
 # CASE_SENSITIVE="true"
 # HYPHEN_INSENSITIVE="true"
@@ -20,13 +21,6 @@ COMPLETION_WAITING_DOTS="true"
 #
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
 
 zstyle ':omz:update' mode auto      # update automatically without asking (other options: disabled, reminder)
 zstyle ':omz:update' frequency 33
