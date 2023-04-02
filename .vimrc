@@ -374,7 +374,7 @@ endfunction
 au VimLeave * call <SID>DeleteOldBackups()
 
 " Timestamped backups
-"au BufWritePre * let &backupext = '.bak' . localtime()
+au BufWritePre * let &backupext = '.bak' . localtime()
 
 " Store .bak files in ~/.vim/backup
 if filewritable("$HOME/.vim/backup") != 2 && (has("unix") || has("win32unix"))
