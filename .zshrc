@@ -67,6 +67,7 @@ plugins=(
 	git
 	docker
 	docker-compose
+	terraform
 	golang
 	poetry
 	zsh-nvm
