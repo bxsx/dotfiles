@@ -134,7 +134,7 @@
       ]
     },
     {
-        "description": "[R2] Fn+F8 - Switch to Signal",
+        "description": "[R2] Fn+F8 - Switch to Signal (or MS Teams)",
         "manipulators": [
             {
                 "from": {
@@ -150,7 +150,7 @@
                 },
                 "to": [
                     {
-                        "shell_command": "open -asignal"
+                        "shell_command": "open -asignal 2>/dev/null || osascript -e 'tell application \"Microsoft Teams\"' -e 'activate' -e 'end tell'"
                     }
                 ],
                 "type": "basic"
@@ -206,7 +206,7 @@
         ]
     },
     {
-        "description": "Fn+U - Switch to Spark (or Outlook Web)",
+        "description": "Fn+U - Switch to Spark (or MS Outlook)",
         "manipulators": [
             {
                 "from": {
@@ -222,7 +222,7 @@
                 },
                 "to": [
                     {
-                        "shell_command": "open -aSpark 2>/dev/null || osascript $HOME/+dev/scripts/bin/openurl https://outlook.office.com"
+                        "shell_command": "open -aSpark 2>/dev/null || open -a'Microsoft Outlook'"
                     }
                 ],
                 "type": "basic"
@@ -327,7 +327,7 @@
         ]
     },
     {
-        "description": "Fn+\\ - Switch to Things",
+        "description": "Fn+\\ - Switch to Things (or MS ToDo)",
         "manipulators": [
             {
                 "from": {
@@ -343,7 +343,7 @@
                 },
                 "to": [
                     {
-                        "shell_command": "open -aThings3"
+                        "shell_command": "open -aThings3 || open -a'Microsoft To Do'"
                     }
                 ],
                 "type": "basic"

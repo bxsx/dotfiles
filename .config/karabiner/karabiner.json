@@ -1,5 +1,6 @@
 {
     "global": {
+        "ask_for_confirmation_before_quitting": true,
         "check_for_updates_on_startup": true,
         "show_in_menu_bar": false,
         "show_profile_name_in_menu_bar": false,
@@ -673,30 +674,6 @@
                         ]
                     },
                     {
-                        "description": "[R2] Fn+F8 - Switch to Signal",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "f8",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "fn"
-                                        ],
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -asignal"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "[R2] Ctrl+F5 - Open a new iTerm window",
                         "manipulators": [
                             {
@@ -714,6 +691,30 @@
                                 "to": [
                                     {
                                         "shell_command": "osascript $HOME/+dev/scripts/bin/iterm-new-window"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[R2] Fn+F8 - Switch to Signal (or MS Teams)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "f8",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -asignal 2>/dev/null || osascript -e 'tell application \"Microsoft Teams\"' -e 'activate' -e 'end tell'"
                                     }
                                 ],
                                 "type": "basic"
@@ -769,7 +770,7 @@
                         ]
                     },
                     {
-                        "description": "Fn+U - Switch to Spark (or Outlook Web)",
+                        "description": "Fn+U - Switch to Spark (or MS Outlook)",
                         "manipulators": [
                             {
                                 "from": {
@@ -785,7 +786,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -aSpark 2>/dev/null || osascript $HOME/+dev/scripts/bin/openurl https://outlook.office.com"
+                                        "shell_command": "open -aSpark 2>/dev/null || open -a'Microsoft Outlook'"
                                     }
                                 ],
                                 "type": "basic"
@@ -890,7 +891,7 @@
                         ]
                     },
                     {
-                        "description": "Fn+\\ - Switch to Things",
+                        "description": "Fn+\\ - Switch to Things (or MS ToDo)",
                         "manipulators": [
                             {
                                 "from": {
@@ -906,7 +907,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -aThings3"
+                                        "shell_command": "open -aThings3 || open -a'Microsoft To Do'"
                                     }
                                 ],
                                 "type": "basic"
@@ -1492,7 +1493,7 @@
                             },
                             "to": [
                                 {
-                                    "shell_command": "open -aSpark 2>/dev/null || osascript $HOME/+dev/scripts/bin/openurl https://outlook.office.com"
+                                    "shell_command": "open -aSpark 2>/dev/null || open -a'Microsoft Outlook'"
                                 }
                             ]
                         },
