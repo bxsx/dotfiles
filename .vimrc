@@ -165,6 +165,14 @@ au Filetype javascript,html,css,htmldjango,sql set
     \ shiftwidth=2
     \ textwidth=0
 
+au Filetype typescript set
+    \ tabstop=2
+    \ softtabstop=2
+    \ shiftwidth=2
+    \ textwidth=0
+    \ expandtab
+    \ autoindent
+
 au Filetype make set
     \ tabstop=4
     \ shiftwidth=4
@@ -184,6 +192,13 @@ au Filetype proto set
     \ textwidth=80
     \ expandtab
     \ smartindent
+
+au Filetype markdown set
+    \ tabstop=4
+    \ softtabstop=4
+    \ shiftwidth=4
+    \ expandtab
+    \ textwidth=79
 
 " Powerline
 set guifont=MesloLGS\ NF:h13
