@@ -89,7 +89,7 @@ set smartcase
 
 " Line numbers
 set number
-set relativenumber
+"set relativenumber
 highlight CursorLineNr ctermfg=2 ctermbg=NONE cterm=NONE
 
 
@@ -292,37 +292,39 @@ nnoremap <leader>hf :GitGutterFold<CR>
 nnoremap <leader>hh :GitGutterLineHighlightsToggle<CR>
 
 highlight SignColumn ctermbg=NONE
+highlight LineNr ctermbg=NONE
+highlight CursorLineNr ctermbg=NONE
 
-function! SignColumnToggleTrigger() abort
-  let visible = &signcolumn ==# 'yes'
-  if &signcolumn ==# 'auto'
-    let visible = len(sign_getplaced('%', {'group': '*'})[0].signs)
-  endif
-  if visible
-    highlight LineNr ctermbg=NONE
-    highlight CursorLineNr ctermbg=NONE
-    augroup numbertoggle
-        autocmd!
-        autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu | hi CursorLineNr ctermfg=2 ctermbg=NONE cterm=NONE | endif
-        autocmd BufLeave,FocusLost,InsertEnter,WinLeave * if &nu | set nornu | hi CursorLineNr ctermfg=11 ctermbg=NONE cterm=underline | endif
-    augroup END
-  else
-    " Distinct background for LineNr if no SignColumn
-    highlight LineNr ctermbg=0
-    highlight CursorLineNr ctermbg=0
-    augroup numbertoggle
-        autocmd!
-        autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu | hi CursorLineNr ctermfg=2 ctermbg=0 cterm=NONE | endif
-        autocmd BufLeave,FocusLost,InsertEnter,WinLeave * if &nu | set nornu | hi CursorLineNr ctermfg=11 ctermbg=NONE cterm=underline | endif
-    augroup END
-  endif
-endfunction
+"function! SignColumnToggleTrigger() abort
+"  let visible = &signcolumn ==# 'yes'
+"  if &signcolumn ==# 'auto'
+"    let visible = len(sign_getplaced('%', {'group': '*'})[0].signs)
+"  endif
+"  if visible
+"    highlight LineNr ctermbg=NONE
+"    highlight CursorLineNr ctermbg=NONE
+"    augroup numbertoggle
+"        autocmd!
+"        autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu | hi CursorLineNr ctermfg=2 ctermbg=NONE cterm=NONE | endif
+"        autocmd BufLeave,FocusLost,InsertEnter,WinLeave * if &nu | set nornu | hi CursorLineNr ctermfg=11 ctermbg=NONE cterm=underline | endif
+"    augroup END
+"  else
+"    " Distinct background for LineNr if no SignColumn
+"    highlight LineNr ctermbg=0
+"    highlight CursorLineNr ctermbg=0
+"    augroup numbertoggle
+"        autocmd!
+"        autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu | hi CursorLineNr ctermfg=2 ctermbg=0 cterm=NONE | endif
+"        autocmd BufLeave,FocusLost,InsertEnter,WinLeave * if &nu | set nornu | hi CursorLineNr ctermfg=11 ctermbg=NONE cterm=underline | endif
+"    augroup END
+"  endif
+"endfunction
 
-augroup SignColumnToggleTrigger
-  autocmd!
-  autocmd BufEnter,BufWinEnter * call SignColumnToggleTrigger()
-  autocmd User GitGutter call SignColumnToggleTrigger()
-augroup END
+"augroup SignColumnToggleTrigger
+"  autocmd!
+"  autocmd BufEnter,BufWinEnter * call SignColumnToggleTrigger()
+"  autocmd User GitGutter call SignColumnToggleTrigger()
+"augroup END
 
 
 " vim-go
