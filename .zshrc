@@ -35,6 +35,8 @@ export LS_COLORS="*.arw=38;5;133:*.bmp=38;5;133:*.cbr=38;5;133:*.cbz=38;5;133:*.
 
 ### Custom required pre-OMZ! init configuration
 # Must be set before sourcing Oh-my-zsh
+autoload -Uz compinit && compinit
+source "${ZSH_CUSTOM}/plugins/fzf-tab/fzf-tab.plugin.zsh"
 # XXX: napewno? zstyle nie powinien byc po? (patrz list-colors)
 # disable sort when completing `git checkout`
 zstyle ':completion:*:git-checkout:*' sort false
