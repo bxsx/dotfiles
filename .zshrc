@@ -5,12 +5,16 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="powerlevel10k/powerlevel10k"
 export ZSH_CUSTOM="$ZSH/custom"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 HIST_STAMPS="yyyy-mm-dd"
+export HISTSIZE=1000000
+export SAVEHIST=$HISTSIZE
+setopt hist_ignore_dups
+setopt hist_ignore_space
+
 COMPLETION_WAITING_DOTS="true"
 # CASE_SENSITIVE="true"
 # HYPHEN_INSENSITIVE="true"
@@ -22,7 +26,7 @@ COMPLETION_WAITING_DOTS="true"
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
 
-zstyle ':omz:update' mode auto      # update automatically without asking (other options: disabled, reminder)
+zstyle ':omz:update' mode reminder
 zstyle ':omz:update' frequency 33
 
 
@@ -72,6 +76,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+
 #export CLICOLOR=1
 #export TERM=xterm-256color
 
@@ -116,7 +121,8 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # Homebrew
 export HOMEBREW_NO_ENV_HINTS=true
 eval "$(/opt/homebrew/bin/brew shellenv)"
-# Replace POSIX sed with GNU sed (should help fzf/fzf-tab?)
+
+# GNU sed (instead of POSIX sed)
 SEDPATH=$(brew --prefix gnu-sed) && test -d $SEDPATH && export PATH="$SEDPATH/libexec/gnubin:$PATH"
 unset SEDPATH
 
@@ -204,12 +210,8 @@ fi
 
 
 # Other
-export HISTSIZE=1000000
-export SAVEHIST=$HISTSIZE
-# setopt hist_ignore_all_dups
-# setopt hist_ignore_space
 export EDITOR=vim
-export LESS="-e -F -X $LESS" # e:--quit-at-eof F:--quit-if-one-screen X:--no-init
+export LESS="--quit-at-eof --quit-if-one-screen --no-init $LESS"
 export LANG="en_US.UTF-8"
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 #export SLACK_DEVELOPER_MENU=true
@@ -262,7 +264,7 @@ alias airplayrestart="sudo killall coreaudiod AirPlayXPCHelper"
 function omz-update-custom() {
 	pushd ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}
 	for plugin in plugins/*/ themes/*/; do
-		if [ -d "$plugin/.git" ]; then
+		if [[ -d "$plugin/.git" ]]; then
 			printf "${YELLOW}%s${RESET}\n" "${plugin%/}"
 			git -C "$plugin" pull
 		fi
@@ -271,7 +273,5 @@ function omz-update-custom() {
 }
 
 # External configs
-[ -f ~/.zshrc-external ] && source ~/.zshrc-external
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ -f ~/.zshrc-external ]] && source ~/.zshrc-external
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
