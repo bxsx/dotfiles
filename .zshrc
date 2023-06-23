@@ -62,6 +62,7 @@ export NVM_COMPLETION=true
 
 
 plugins=(
+	aws
 	git
 	docker
 	docker-compose
