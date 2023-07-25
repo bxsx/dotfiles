@@ -269,6 +269,24 @@ alias garminsync="garminsync $HOME/Documents/bike/activities $DEVDIR/opensource/
 alias dnscheck="dig @8.8.8.8 \$1 ANY +noall +answer"
 alias airplayrestart="sudo killall coreaudiod AirPlayXPCHelper"
 
+
+function kpod() {
+	kubectl create -f- <<-EOF
+	---
+	apiVersion: v1
+	kind: Pod
+	metadata:
+	  name: bart-sh
+	spec:
+	  containers:
+	  - name: shell
+	    image: ${1:-python:alpine}
+	    command: ['sh']
+	    args: ['-c', 'while true; do sleep 3600; done']
+	EOF
+}
+
+
 function omz-update-custom() {
 	pushd ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}
 	for plugin in plugins/*/ themes/*/; do
