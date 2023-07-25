@@ -194,6 +194,7 @@ export FZF_CTRL_T_OPTS="--preview='bat --color=always --style=numbers {}'"
 export FZF_ALT_C_COMMAND="fd --type d --hidden --color=always -I $FZF_EXCLUDED"
 export FZF_ALT_C_OPTS="--preview='exa -1 --color=always {}'"
 
+export FZF_VIM_COMMAND="${FZF_DEFAULT_COMMAND} --hidden $FZF_EXCLUDED"
 
 if [[ -f ~/.fzf.zsh ]]; then
   source ~/.fzf.zsh

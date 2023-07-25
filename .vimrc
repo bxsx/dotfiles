@@ -254,7 +254,7 @@ function! FZFWithDevIcons()
   let l:fzf_files_options = ' -m --bind ctrl-d:preview-page-down,ctrl-u:preview-page-up --preview "bat --color always --style numbers {2..}"'
 
   function! s:files()
-    let files = split(system($FZF_DEFAULT_COMMAND), '\n')
+    let files = split(system($FZF_VIM_COMMAND), '\n')
     return s:prepend_icon(l:files)
   endfunction
 
@@ -284,7 +284,7 @@ function! FZFWithDevIcons()
     call s:Sink(items)
   endfunction
 
-  let counter = len(split(system($FZF_DEFAULT_COMMAND . ' --max-results ' . l:files_limit), '\n'))
+  let counter = len(split(system($FZF_VIM_COMMAND . ' --max-results ' . l:files_limit), '\n'))
   if counter >= l:files_limit
     call fzf#run(fzf#wrap({}))
   else
