@@ -159,7 +159,7 @@ au Filetype go set
     \ shiftwidth=4
     \ noexpandtab
 
-au Filetype javascript,html,css,htmldjango,sql set
+au Filetype sh,javascript,html,css,htmldjango,sql set
     \ tabstop=2
     \ softtabstop=2
     \ shiftwidth=2
