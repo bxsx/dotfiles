@@ -91,7 +91,7 @@ export ZSH_HIGHLIGHT_STYLES[comment]=fg=8
 alias config="git --git-dir=${HOME}/.dotfiles/ --work-tree=${HOME}"
 
 export DEVDIR="$HOME/+dev"
-export PATH="$PATH:$DEVDIR/scripts/bin"
+export PATH="$DEVDIR/scripts/bin:$PATH"
 export CDPATH=.:..:...:$HOME:$DEVDIR
 #export ARCHFLAGS="-arch arm64"
 
@@ -159,7 +159,7 @@ alias makepy="make clean && \
 
 # Go
 export GOPATH="$HOME/.go"
-export PATH="$PATH:$GOPATH/bin"
+export PATH="$GOPATH/bin:$PATH"
 
 # Perl
 eval "$(perl -I$HOME/.perl5/lib/perl5 -Mlocal::lib=$HOME/.perl5)"
