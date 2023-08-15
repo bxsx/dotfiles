@@ -165,6 +165,9 @@ export PATH="$PATH:$GOPATH/bin"
 eval "$(perl -I$HOME/.perl5/lib/perl5 -Mlocal::lib=$HOME/.perl5)"
 
 # Git
+# Use completions provided by ZSH instead of Git
+[[ -L "$(brew --prefix)/share/zsh/site-functions/_git" ]] && rm "$(brew --prefix)/share/zsh/site-functions/_git"
+
 unalias gsr # disable oh-my-zsh git svn rebase
 unalias gsd # disable oh-my-zsh git svn dcommit
 alias glf="git log --oneline | fzf --multi --preview 'git show {+1} --color=always'"
@@ -176,7 +179,6 @@ alias gbv="git branch -v"
 alias gbva="git branch -v -a"
 alias gamsoff="git am --signoff"
 alias gstats="git log --shortstat --author='Bart Skowron' | grep -E 'fil(e|es) changed' | awk '{files+=\$1; inserted+=\$4; deleted+=\$6; delta+=\$4-\$6; ratio=deleted/inserted} END {printf \"Commit stats:\n- Files changed (total)..  %s\n- Lines added (total)....  %s\n- Lines deleted (total)..  %s\n- Total lines (delta)....  %s\n- Add./Del. ratio (1:n)..  1 : %s\n\", files, inserted, deleted, delta, ratio }' -"
-[[ -L $(brew --prefix)/share/zsh/site-functions/_git ]] && rm $(brew --prefix)/share/zsh/site-functions/_git
 
 # PostgreSQL
 export PATH="$(brew --prefix libpq)/bin:$PATH"
