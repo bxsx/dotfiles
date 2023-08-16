@@ -16,6 +16,7 @@ Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim'}
 "Plugin 'vim-airline/vim-airline'
 "Plugin 'vim-airline/vim-airline-themes'
 Bundle 'Valloric/YouCompleteMe'
+Plugin 'Valloric/ListToggle'
 Plugin 'preservim/nerdcommenter'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'scrooloose/nerdtree'
@@ -116,12 +117,6 @@ nnoremap <leader>F zM
 nnoremap <leader>FF zR
 
 
-" Auto-complete (YouCompleteMe)
-let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_java_binary_path = systemlist('brew --prefix openjdk@17')[0] . '/bin/java'
-map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
-
 " Code comments
 let g:NERDDefaultAlign = 'both'
 map <leader>/ <plug>NERDCommenterToggle
@@ -211,6 +206,20 @@ let g:airline_powerline_fonts = 1
 " Ack
 cnoreabbrev Ack Ack!
 nnoremap <leader>a :Ack!<space>
+
+
+" YouCompleteMe
+" Auto-completion
+let g:ycm_java_binary_path = systemlist('brew --prefix openjdk@17')[0] . '/bin/java'
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" Errors navigation (YCM + ListToggle)
+let g:ycm_always_populate_location_list = 1
+let g:lt_location_list_toggle_map = '<leader>l'
+let g:lt_quickfix_list_toggle_map = '<leader>q'
+let g:lt_height = 6
+nmap <leader>j :lnext<CR>
+nmap <leader>k :lprevious<CR>
 
 
 " Objects Explorer (Tagbar)
