@@ -23,3 +23,5 @@
 # Use ~/.gitconfig-private for private/opensource projects on an external computer
 [includeIf "gitdir:~/+prv/"]
 	path = .gitconfig-private
+[includeIf "gitdir:~/+dev/opensource/"]
+	path = .gitconfig-private
