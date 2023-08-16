@@ -118,7 +118,7 @@ nnoremap <leader>FF zR
 
 " Auto-complete (YouCompleteMe)
 let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_java_binary_path = substitute(system('brew --prefix openjdk@17') . '/bin/java', '\%x00', '', 'g')
+let g:ycm_java_binary_path = systemlist('brew --prefix openjdk@17')[0] . '/bin/java'
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 
