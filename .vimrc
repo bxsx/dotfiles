@@ -116,11 +116,9 @@ nnoremap <leader>F zM
 nnoremap <leader>FF zR
 
 
-" Auto-complete
+" Auto-complete (YouCompleteMe)
 let g:ycm_autoclose_preview_window_after_completion=1
-
-
-" Go to definition/declaration
+let g:ycm_java_binary_path = substitute(system('brew --prefix openjdk@17') . '/bin/java', '\%x00', '', 'g')
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 
