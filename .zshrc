@@ -158,6 +158,7 @@ alias makepy="make clean && \
               && make -s -j$(python3 -c 'import os; print(os.cpu_count() + 2)')"
 
 # Go
+export GOPRIVATE=github.com/bxsx
 export GOPATH="$HOME/.go"
 export PATH="$GOPATH/bin:$PATH"
 
