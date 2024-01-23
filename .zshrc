@@ -123,9 +123,12 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 export HOMEBREW_NO_ENV_HINTS=true
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# GNU sed (instead of POSIX sed)
-SEDPATH=$(brew --prefix gnu-sed) && test -d $SEDPATH && export PATH="$SEDPATH/libexec/gnubin:$PATH"
-unset SEDPATH
+# GNU utils (instead of POSIX)
+#SED=$(brew --prefix gnu-sed) && test -d $SED && export PATH="$SED/libexec/gnubin:$PATH"
+#GREP=$(brew --prefix grep) && test -d $GREP && export PATH="$GREP/libexec/gnubin:$PATH"
+#FINDUTILS=$(brew --prefix findutils) && test -d $FINDUTILS && export PATH="$FINDUTILS/libexec/gnubin:$PATH"
+#COREUTILS=$(brew --prefix coreutils) && test -d $COREUTILS && export PATH="$COREUTILS/libexec/gnubin:$PATH"
+#unset COREUTILS FINDUTILS GREP SED
 
 ## Python
 # PIPX
