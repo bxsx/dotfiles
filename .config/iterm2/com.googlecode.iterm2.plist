@@ -2930,7 +2930,7 @@
 				<key>Has Toolbelt</key>
 				<false/>
 				<key>Height</key>
-				<real>497</real>
+				<real>633</real>
 				<key>Hide After Opening</key>
 				<false/>
 				<key>Hiding Toolbelt Should Resize Window</key>
@@ -3295,7 +3295,7 @@
 												<real>0.51372549019607838</real>
 											</dict>
 											<key>Guid</key>
-											<string>CA000A2F-4CA8-40C2-B5E1-695830127DB2</string>
+											<string>B45D4733-9F00-4534-8F6A-F2F7F5008D6D</string>
 											<key>Has Hotkey</key>
 											<false/>
 											<key>Horizontal Spacing</key>
@@ -3874,9 +3874,21 @@
 											<string>brew upgrade</string>
 											<string>brew info docutils</string>
 											<string>twa</string>
+											<string>brew update</string>
+											<string>brew upgrade</string>
+											<string>brew cleanup</string>
 										</array>
 										<key>Directories</key>
 										<array>
+											<string>/Users/bart</string>
+											<string>/Users/bart</string>
+											<string>/Users/bart</string>
+											<string>/Users/bart</string>
+											<string>/Users/bart</string>
+											<string>/Users/bart</string>
+											<string>/Users/bart</string>
+											<string>/Users/bart</string>
+											<string>/Users/bart</string>
 											<string>/Users/bart</string>
 											<string>/Users/bart</string>
 											<string>/Users/bart</string>
@@ -3988,6 +4000,60 @@
 												<key>User name</key>
 												<string>bart</string>
 											</dict>
+											<dict>
+												<key>Host name</key>
+												<string>MacBook-Pro</string>
+												<key>User name</key>
+												<string>bart</string>
+											</dict>
+											<dict>
+												<key>Host name</key>
+												<string>MacBook-Pro</string>
+												<key>User name</key>
+												<string>bart</string>
+											</dict>
+											<dict>
+												<key>Host name</key>
+												<string>MacBook-Pro</string>
+												<key>User name</key>
+												<string>bart</string>
+											</dict>
+											<dict>
+												<key>Host name</key>
+												<string>MacBook-Pro</string>
+												<key>User name</key>
+												<string>bart</string>
+											</dict>
+											<dict>
+												<key>Host name</key>
+												<string>MacBook-Pro</string>
+												<key>User name</key>
+												<string>bart</string>
+											</dict>
+											<dict>
+												<key>Host name</key>
+												<string>MacBook-Pro</string>
+												<key>User name</key>
+												<string>bart</string>
+											</dict>
+											<dict>
+												<key>Host name</key>
+												<string>MacBook-Pro</string>
+												<key>User name</key>
+												<string>bart</string>
+											</dict>
+											<dict>
+												<key>Host name</key>
+												<string>MacBook-Pro</string>
+												<key>User name</key>
+												<string>bart</string>
+											</dict>
+											<dict>
+												<key>Host name</key>
+												<string>MacBook-Pro</string>
+												<key>User name</key>
+												<string>bart</string>
+											</dict>
 										</array>
 										<key>Is UTF-8</key>
 										<true/>
@@ -4012,9 +4078,9 @@
 											<string>Shell Launcher</string>
 										</dict>
 										<key>Rows</key>
-										<integer>29</integer>
+										<integer>37</integer>
 										<key>Session GUID</key>
-										<string>F0B5BEA8-B2EC-4B22-B145-B71F2358365B</string>
+										<string>6377268D-9D9E-4631-9A72-4637096FEB02</string>
 										<key>Short Lived Single Use</key>
 										<false/>
 										<key>Should Expect Current Dir Updates</key>
@@ -4036,7 +4102,7 @@
 									<key>frame</key>
 									<dict>
 										<key>height</key>
-										<real>497</real>
+										<real>633</real>
 										<key>width</key>
 										<real>1274</real>
 										<key>x</key>
@@ -4051,7 +4117,7 @@
 							<key>frame</key>
 							<dict>
 								<key>height</key>
-								<real>497</real>
+								<real>633</real>
 								<key>width</key>
 								<real>1274</real>
 								<key>x</key>
@@ -4102,7 +4168,7 @@
 				<key>X Origin</key>
 				<real>1283</real>
 				<key>Y Origin</key>
-				<real>56</real>
+				<real>54</real>
 			</dict>
 		</array>
 		<key>Side Terminal (MBP)</key>
