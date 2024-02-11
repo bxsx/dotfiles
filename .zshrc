@@ -45,7 +45,7 @@ zstyle ':fzf-tab:*' switch-group ',' '.'
 # remove redudant prefix for each item
 zstyle ':fzf-tab:*' prefix ''
 # fzf-preview for tab completation
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --icons --color=always $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --no-quotes --icons --color=always $realpath'
 zstyle ':fzf-tab:complete:vim:*' fzf-preview 'bat --color=always --style=numbers $realpath'
 # key-bindings:
 # - restore default multiselect fzf binding (<tab>)
@@ -197,7 +197,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND -I $FZF_EXCLUDED"
 export FZF_CTRL_T_OPTS="--preview='bat --color=always --style=numbers {}'"
 
 export FZF_ALT_C_COMMAND="fd --type d --hidden --color=always -I $FZF_EXCLUDED"
-export FZF_ALT_C_OPTS="--preview='eza -1 --icons --color=always {}'"
+export FZF_ALT_C_OPTS="--preview='eza -1 --no-quotes --icons --color=always {}'"
 
 export FZF_VIM_COMMAND="${FZF_DEFAULT_COMMAND} --hidden $FZF_EXCLUDED"
 
@@ -255,11 +255,11 @@ if command -v bat &> /dev/null; then
 #	alias cat="bat --paging=never"
 fi
 if command -v eza &> /dev/null; then
-	alias ls="eza"
+	alias ls="eza --no-quotes"
 	alias lt="ls --tree --icons"
-	alias la="eza -a"
+	alias la="ls -a"
 	alias lat="la --tree --icons"
-	alias ll="eza -lg --icons"
+	alias ll="ls -lg --icons"
 	alias llt="ll --tree"
 	alias l="ll -a"
 fi
