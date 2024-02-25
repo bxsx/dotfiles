@@ -293,6 +293,8 @@ function kpod() {
 
 
 function omz-update-custom() {
+    YELLOW="$(tput setaf 3)"
+    RESET="$(tput sgr0)"
 	pushd ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}
 	for plugin in plugins/*/ themes/*/; do
 		if [[ -d "$plugin/.git" ]]; then
