@@ -258,7 +258,7 @@ set rtp+=/opt/homebrew/opt/fzf
 map <leader>t :call FZFWithDevIcons()<CR>
 function! FZFWithDevIcons()
   let l:files_limit = 3000 " higher values can slow down the command
-  let l:fzf_files_options = ' -m --bind ctrl-d:preview-page-down,ctrl-u:preview-page-up --preview "bat --color always --style numbers {2..}"'
+  let l:fzf_files_options = ' -m --bind ctrl-f:preview-page-down,ctrl-b:preview-page-up --preview "bat --color always --style numbers {2..}"'
 
   function! s:files()
     let files = split(system($FZF_VIM_COMMAND), '\n')
