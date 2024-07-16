@@ -142,63 +142,6 @@ map <leader>R :w<CR>:!python %
 "map <S-F1> <F4>
 
 
-" Filetypes
-au Filetype python,php set
-    \ tabstop=4
-    \ softtabstop=4
-    \ shiftwidth=4
-    \ textwidth=79
-    \ expandtab
-    \ autoindent
-    \ fileformat=unix
-
-au Filetype go set
-    \ tabstop=4
-    \ softtabstop=0
-    \ shiftwidth=4
-    \ noexpandtab
-
-au Filetype sh,javascript,html,css,htmldjango,sql set
-    \ tabstop=2
-    \ softtabstop=2
-    \ shiftwidth=2
-    \ textwidth=0
-
-au Filetype typescript set
-    \ tabstop=2
-    \ softtabstop=2
-    \ shiftwidth=2
-    \ textwidth=0
-    \ expandtab
-    \ autoindent
-
-au Filetype make set
-    \ tabstop=4
-    \ shiftwidth=4
-    \ noexpandtab
-
-au Filetype json set
-    \ tabstop=4
-    \ softtabstop=4
-    \ shiftwidth=4
-    \ expandtab
-    \ autoindent
-
-au Filetype proto set
-    \ tabstop=2
-    \ softtabstop=2
-    \ shiftwidth=2
-    \ textwidth=80
-    \ expandtab
-    \ smartindent
-
-au Filetype markdown set
-    \ tabstop=4
-    \ softtabstop=4
-    \ shiftwidth=4
-    \ expandtab
-    \ textwidth=79
-
 " Powerline
 set guifont=MesloLGS\ NF:h13
 let g:powerline_pycmd = 'py3'
@@ -398,3 +341,40 @@ set backupdir=$HOME/.vim/backup// " double trailing slash to rename backup file 
 set backupext=.bak
 set backupcopy=yes
 set writebackup
+
+
+" Filetypes (Golang set by vim-go plugin)
+set textwidth=0
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+
+autocmd Filetype python,php setlocal
+    \ textwidth=79
+    \ fileformat=unix
+
+" Go set by vim-go plugin
+"autocmd Filetype go setlocal
+"    \ softtabstop=0
+"    \ noexpandtab
+
+autocmd Filetype sh,javascript,typescript,html,css,htmldjango,sql setlocal
+    \ tabstop=2
+    \ softtabstop=2
+    \ shiftwidth=2
+
+autocmd Filetype proto setlocal
+    \ textwidth=80
+    \ tabstop=2
+    \ softtabstop=2
+    \ shiftwidth=2
+    \ smartindent
+
+autocmd Filetype make setlocal
+    \ noexpandtab
+
+autocmd Filetype markdown setlocal
+    \ textwidth=79
+    \ noautoindent
