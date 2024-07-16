@@ -2910,6 +2910,8 @@
 	<false/>
 	<key>ShowNewOutputIndicator</key>
 	<true/>
+	<key>ShowSecureKeyboardEntryIndicator</key>
+	<false/>
 	<key>SmartPlacement</key>
 	<true/>
 	<key>SoundForEsc</key>
