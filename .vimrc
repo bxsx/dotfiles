@@ -123,6 +123,11 @@ let g:NERDDefaultAlign = 'both'
 map <leader>/ <plug>NERDCommenterToggle
 
 
+" Merge conflicts
+nnoremap <leader>cj :/<<<<<<<<CR>
+nnoremap <leader>ck :?<<<<<<<<CR>
+
+
 " Shortcuts
 map <F1> :!<CR>
 map <F2> :!!<CR>
