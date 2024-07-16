@@ -8,6 +8,8 @@
 	<false/>
 	<key>BracketedPasteMode</key>
 	<true/>
+	<key>ClickToSelectCommand</key>
+	<false/>
 	<key>ConvertDosNewlines</key>
 	<true/>
 	<key>Default Arrangement Name</key>
