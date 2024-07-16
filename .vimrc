@@ -27,6 +27,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'fatih/vim-go'
 Plugin 'hashivim/vim-terraform'
+Plugin 'github/copilot.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
