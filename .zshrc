@@ -71,6 +71,7 @@ plugins=(
 	poetry
 	zsh-nvm
 	timewarrior
+	you-should-use
 	fzf-tab
 	zsh-autosuggestions
 	zsh-syntax-highlighting
@@ -84,6 +85,8 @@ source $ZSH/oh-my-zsh.sh
 # fix invisible colors
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=fg=10
 export ZSH_HIGHLIGHT_STYLES[comment]=fg=8
+
+#export YSU_MESSAGE_POSITION="after"
 
 
 ### User configuration
