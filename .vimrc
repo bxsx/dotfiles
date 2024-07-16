@@ -167,8 +167,8 @@ let g:ycm_always_populate_location_list = 1
 let g:lt_location_list_toggle_map = '<leader>l'
 let g:lt_quickfix_list_toggle_map = '<leader>q'
 let g:lt_height = 6
-nmap <leader>j :lnext<CR>
-nmap <leader>k :lprevious<CR>
+noremap <leader>j :lnext<CR>
+noremap <leader>k :lprevious<CR>
 
 
 " Objects Explorer (Tagbar)
