@@ -251,6 +251,9 @@ alias du="du -h"
 alias ncdu="ncdu --color dark"
 alias htop="sudo htop"
 alias nproc="sysctl -n hw.logicalcpu"
+alias bup="brew update"
+alias bupg="brew upgrade"
+alias bupc="brew cleanup -s"
 
 if command -v bat &> /dev/null; then
 	export BAT_THEME="Solarized (dark)"
