@@ -71,7 +71,7 @@ plugins=(
 	poetry
 	zsh-nvm
 	timewarrior
-	you-should-use
+	zsh-you-should-use
 	fzf-tab
 	zsh-autosuggestions
 	zsh-syntax-highlighting
