@@ -124,6 +124,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # Homebrew
 export HOMEBREW_NO_ENV_HINTS=true
+export HOMEBREW_NO_ANALYTICS=true
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # GNU utils (instead of POSIX)
