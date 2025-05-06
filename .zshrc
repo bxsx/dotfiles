@@ -64,14 +64,16 @@ export NVM_COMPLETION=true
 plugins=(
 	aws
 	git
+	golang
+	poetry
 	docker
 	docker-compose
 	terraform
-	golang
-	poetry
-	zsh-nvm
+	# custom plugins
 	timewarrior
+	zsh-nvm
 	zsh-you-should-use
+	# must be installed at the end
 	fzf-tab
 	zsh-autosuggestions
 	zsh-syntax-highlighting
