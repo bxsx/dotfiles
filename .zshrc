@@ -207,8 +207,8 @@ export FZF_ALT_C_OPTS="--preview='eza -1 --no-quotes --icons=always --color=alwa
 
 export FZF_VIM_COMMAND="${FZF_DEFAULT_COMMAND} --hidden $FZF_EXCLUDED"
 
-if [[ -f ~/.fzf.zsh ]]; then
-  source ~/.fzf.zsh
+if command -v fzf &> /dev/null; then
+  source <(fzf --zsh)
 
   # Default key bindings:
   #   CTRL-T                   - paste the selected files and directories onto the command-line
