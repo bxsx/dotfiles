@@ -146,8 +146,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 export PATH="$PYENV_ROOT/bin:$PATH"
 if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init --path)"
-  eval "$(pyenv init -)"
+  eval "$(pyenv init - zsh)"
 fi
 if which pyenv-virtualenv-init > /dev/null; then
   eval "$(pyenv virtualenv-init -)"
