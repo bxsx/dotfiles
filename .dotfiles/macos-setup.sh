@@ -37,7 +37,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 brew install pyenv
 eval "$(pyenv init - zsh)"
 pyenv install 3
-pyenv shell 3
+pyenv latest 3 | xargs -I{} pyenv global {} system
 pip install setuptools
 
 brew install cmake go nodejs openjdk
