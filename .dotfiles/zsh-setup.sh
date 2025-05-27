@@ -1,6 +1,46 @@
 #!/bin/bash
 
-set -eo pipefail
+set -euo pipefail
+
+
+_install_fonts() {
+	FONT_STYLES=(
+		"MesloLGS NF Regular.ttf"
+		"MesloLGS NF Bold.ttf"
+		"MesloLGS NF Italic.ttf"
+		"MesloLGS NF Bold Italic.ttf"
+	)
+	local font_dir
+
+ 	case "$OSTYPE" in
+  		darwin*)
+			font_dir="$HOME/Library/Fonts"
+   			;;
+	  	linux-gnu*)
+			font_dir="$HOME/.local/share/fonts"
+   			;;
+	  	*)
+			echo "Error: Unsupported OS: $OSTYPE"
+   			return 1
+	  		;;
+	esac
+
+	echo "Installing MesloLGS Nerd Fonts to $font_dir"
+ 	mkdir -p "$font_dir"
+
+	for font in "${FONT_STYLES[@]}"; do
+ 		local url="https://github.com/romkatv/powerlevel10k-media/raw/master/$(echo "$font" | sed 's/ /%20/g')"
+	 	echo "Downloading: $font"
+		curl -fsSL "$url" -o "$font_dir/$font"
+	done
+
+	if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+		fc-cache -f -v > /dev/null
+	fi
+
+ 	echo "Installation complete."
+}
+
 
 KEEP_ZSHRC=yes RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -17,7 +57,7 @@ echo
 while true; do
 	read -rp "Install custom fonts for p10k? (Yes|No) " yn
 	case $yn in
-		[Yy]* ) p10k configure; break;;
+		[Yy]* ) _install_fonts; break;;
 		[Nn]* ) echo "OK. Don't forget to install custom fonts from: https://github.com/romkatv/powerlevel10k#manual-font-installation"; break;;
 		* ) echo "Please answer yes or no.";;
 	esac
