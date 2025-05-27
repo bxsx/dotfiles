@@ -314,6 +314,17 @@ function omz-update-custom() {
 	popd
 }
 
+# Verify prerequisites
+tools=(
+  fd
+  fzf
+)
+for cmd in "${tools[@]}"; do
+  if ! command -v "$cmd" &> /dev/null; then
+    echo "Missing tool: $cmd"
+  fi
+done
+
 # External configs
 [[ -f ~/.zshrc-external ]] && source ~/.zshrc-external
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
