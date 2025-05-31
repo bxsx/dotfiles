@@ -479,7 +479,7 @@
                         ]
                     },
                     {
-                        "description": "Fn+T - Switch to Telegram (or Slack)",
+                        "description": "Fn+T - Switch to Slack (or Telegram)",
                         "manipulators": [
                             {
                                 "from": {
@@ -489,7 +489,7 @@
                                         "optional": ["caps_lock"]
                                     }
                                 },
-                                "to": [{ "shell_command": "open -atelegram 2>/dev/null || open -aslack" }],
+                                "to": [{ "shell_command": "open -aslack 2>/dev/null || open -atelegram" }],
                                 "type": "basic"
                             }
                         ]
@@ -1048,7 +1048,7 @@
                         },
                         {
                             "from": { "key_code": "f8" },
-                            "to": [{ "shell_command": "open -atelegram 2>/dev/null || open -aslack" }]
+                            "to": [{ "shell_command": "open -aslack 2>/dev/null || open -atelegram" }]
                         },
                         {
                             "from": { "key_code": "f9" },
