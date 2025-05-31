@@ -97,7 +97,7 @@ alias config="git --git-dir=${HOME}/.dotfiles/ --work-tree=${HOME}"
 
 export DEVDIR="$HOME/+dev"
 export PATH="$DEVDIR/scripts/bin:$PATH"
-export CDPATH=.:..:...:$HOME:$DEVDIR
+export CDPATH=.:..:...:$HOME:$DEVDIR/src:$DEVDIR
 #export ARCHFLAGS="-arch arm64"
 
 #function cd() {
