@@ -11,6 +11,7 @@
 [fetch]
 	prune = true
 [core]
+	autocrlf = input
 	editor = vim
 	#pager = less -S# E:--quit-at-eof S:--chop-long-lines
 	pager = bat --plain
