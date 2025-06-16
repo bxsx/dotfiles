@@ -192,6 +192,9 @@ alias gstats="git log --shortstat --author='Bart Skowron' | grep -E 'fil(e|es) c
 # PostgreSQL
 export PATH="$(brew --prefix libpq)/bin:$PATH"
 
+# MySQL
+export PATH="$(brew --prefix mysql-client)/bin:$PATH"
+
 # FZF
 export FZF_DEFAULT_COMMAND="fd --type f --color=always"
 export FZF_DEFAULT_OPTS="--ansi --multi --height 40% --marker='+' --tabstop=4 --bind ctrl-d:preview-page-down,ctrl-u:preview-page-up"
