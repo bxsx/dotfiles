@@ -22,7 +22,7 @@ export default {
       browser: "com.linear"
     },
     {
-      match: ({ opener }) =>
+      match: (_url, { opener }) =>
         [
           "com.apple.AppStore",
           "com.apple.iCal",
@@ -37,7 +37,7 @@ export default {
           "net.whatsapp.WhatsApp",
           "org.whispersystems.signal-desktop",
           "ru.keepcoder.Telegram",
-        ].includes(opener.bundleId),
+        ].includes(opener?.bundleId ?? ""),
       browser: "com.apple.Safari"
     },
   ],
