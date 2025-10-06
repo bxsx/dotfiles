@@ -1,4 +1,9 @@
 export default {
+  options: {
+    keepRunning: false,
+    hideIcon: true,
+    logRequests: false
+  },
   defaultBrowser: "com.google.Chrome",
   handlers: [
     {
