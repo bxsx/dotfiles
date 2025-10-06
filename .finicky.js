@@ -2,7 +2,7 @@ export default {
   defaultBrowser: "com.google.Chrome",
   handlers: [
     {
-      match: finicky.matchDomains(["github.com", "gitlab.com"]),
+      match: finicky.matchHostnames(["github.com", "gitlab.com"]),
       browser: "com.google.Chrome"
     },
     {
