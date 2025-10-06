@@ -44,21 +44,21 @@ export default {
   rewrite: [
     {
       match: () => true,
-      url: ({ url }) => {
+      url: (url) => {
         const removeKeysStartingWith = ["utm_", "uta_"];
         const removeKeys = ["fbclid", "gclid"];
 
-        const search = url.search
-          .split("&")
-          .map((parameter) => parameter.split("="))
-          .filter(([key]) => !removeKeysStartingWith.some((startingWith) => key.startsWith(startingWith)))
-          .filter(([key]) => !removeKeys.some((removeKey) => key === removeKey));
+        for (const key of [...url.searchParams.keys()]) {
+          if (
+            removeKeysStartingWith.some((prefix) => key.startsWith(prefix))
+            || removeKeys.includes(key)
+          ) {
+            url.searchParams.delete(key);
+          }
+        }
 
-        return {
-          ...url,
-          search: search.map((parameter) => parameter.join("=")).join("&"),
-        };
-      },
+        return url.href;
+      }
     },
   ],
 };
