@@ -1,14 +1,27 @@
+const browsers = {
+  prv: {
+    name: "com.apple.Safari",
+    appType: "bundleId",
+    openInBackground: false
+  },
+  ext: {
+    name: "com.google.Chrome",
+    appType: "bundleId",
+    openInBackground: false
+  },
+};
+
 export default {
   options: {
     keepRunning: false,
     hideIcon: true,
     logRequests: false
   },
-  defaultBrowser: "com.google.Chrome",
+  defaultBrowser: browsers.ext,
   handlers: [
     {
       match: finicky.matchHostnames(["github.com", "gitlab.com"]),
-      browser: "com.google.Chrome"
+      browser: browsers.ext
     },
     {
       match: finicky.matchHostnames("open.spotify.com"),
@@ -43,7 +56,7 @@ export default {
           "org.whispersystems.signal-desktop",
           "ru.keepcoder.Telegram",
         ].includes(opener?.bundleId ?? ""),
-      browser: "com.apple.Safari"
+      browser: browsers.prv
     },
   ],
   rewrite: [
