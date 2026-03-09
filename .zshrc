@@ -72,7 +72,7 @@ plugins=(
 	# custom plugins
 	timewarrior
 	zsh-nvm
-	zsh-auto-nvm-use
+	zsh-nvm-auto-use
 	zsh-you-should-use
 	# must be installed at the end
 	fzf-tab
