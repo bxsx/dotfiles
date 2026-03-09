@@ -50,7 +50,7 @@ export default {
           "com.culturedcode.ThingsMac",
           "com.ideasoncanvas.mindnode",
           "com.readdle.smartemail-Mac",
-          "com.sindresorhus.Caprine",
+          "com.sindresorhus.caprine",
           "com.spotify.client",
           "net.whatsapp.WhatsApp",
           "org.whispersystems.signal-desktop",
