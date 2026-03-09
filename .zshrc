@@ -72,6 +72,7 @@ plugins=(
 	# custom plugins
 	timewarrior
 	zsh-nvm
+	zsh-auto-nvm-use
 	zsh-you-should-use
 	# must be installed at the end
 	fzf-tab
@@ -125,8 +126,10 @@ export CDPATH=.:..:...:$HOME:$DEVDIR/src:$DEVDIR
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Homebrew
+export HOMEBREW_NO_AUTO_UPDATE=true
 export HOMEBREW_NO_ENV_HINTS=true
 export HOMEBREW_NO_ANALYTICS=true
+export HOMEBREW_BAT=true
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # GNU utils (instead of POSIX)
@@ -246,7 +249,9 @@ eval "$(direnv hook zsh)"
 alias v=vim
 alias py=python
 alias ip=ipython
+alias isort="isort --profile=black"
 alias dc=docker-compose
+alias glow="glow -pw0"
 alias k=kubectl
 alias kns=kubens
 alias kctx=kubectx
