@@ -297,7 +297,7 @@ function kpod() {
 	apiVersion: v1
 	kind: Pod
 	metadata:
-	  name: bart-sh
+	  name: bart-pod
 	spec:
 	  containers:
 	  - name: shell
