@@ -32,6 +32,8 @@ zstyle ':omz:update' frequency 33
 
 ### Custom required pre-OMZ! init configuration
 # Must be set before sourcing Oh-my-zsh
+autoload -Uz compinit && compinit
+source "$ZSH_CUSTOM/plugins/fzf-tab/fzf-tab.plugin.zsh"
 # disable sort when completing `git checkout`
 zstyle ':completion:*:git-checkout:*' sort false
 # set descriptions format to enable group support
