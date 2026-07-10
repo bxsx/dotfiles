@@ -130,6 +130,7 @@ export HOMEBREW_NO_AUTO_UPDATE=true
 export HOMEBREW_NO_ENV_HINTS=true
 export HOMEBREW_NO_ANALYTICS=true
 export HOMEBREW_BAT=true
+export HOMEBREW_UPGRADE_GREEDY_CASKS="claude-code"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # GNU utils (instead of POSIX)
@@ -230,7 +231,6 @@ if command -v fzf &> /dev/null; then
   bindkey -M vicmd '\eC' fzf-cd-root-widget
   bindkey -M viins '\eC' fzf-cd-root-widget
 fi
-
 
 # Other
 export EDITOR=vim
