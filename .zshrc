@@ -56,13 +56,6 @@ zstyle ':fzf-tab:complete:vim:*' fzf-preview 'bat --color=always --style=numbers
 zstyle ':fzf-tab:complete:*' fzf-bindings 'shift-tab:toggle+down,space:accept'
 zstyle ':fzf-tab:complete:*' continuous-trigger '\'
 
-# Node.js Version Manager
-# Must be set before loading zsh-nvm plugin (which installs `nvm`)
-export NVM_DIR="$HOME/.nvm"
-export NVM_LAZY_LOAD=true
-export NVM_COMPLETION=true
-
-
 plugins=(
 	aws
 	git
@@ -73,8 +66,6 @@ plugins=(
 	terraform
 	# custom plugins
 	timewarrior
-	zsh-nvm
-	zsh-nvm-auto-use
 	zsh-you-should-use
 	# must be installed at the end
 	fzf-tab
@@ -348,3 +339,14 @@ done
 # External configs
 [[ -f ~/.zshrc-external ]] && source ~/.zshrc-external
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
+## Must be run at the end
+# Node.js Version Manager (nvm) — global default node/npm.
+# The PATH setup lives near the bottom of this file, right before `mise activate`,
+# so nvm's node sits ahead of Homebrew's node in the PATH that mise captures.
+export NVM_DIR="$HOME/.nvm"
+_nvm_default=$(<"$NVM_DIR/alias/default")
+_nvm_default_bin=("$NVM_DIR"/versions/node/v${_nvm_default}*/bin(Nn[-1]))
+[[ -n $_nvm_default_bin ]] && path=($_nvm_default_bin $path)
+unset _nvm_default _nvm_default_bin
+nvm() { unset -f nvm; . "$NVM_DIR/nvm.sh" --no-use; nvm "$@"; }
