@@ -46,6 +46,7 @@ export default {
           "com.apple.iCal",
           "com.apple.Notes",
           "com.apple.reminders",
+          "com.apple.MobileSMS",
           "com.apple.stocks",
           "com.culturedcode.ThingsMac",
           "com.ideasoncanvas.mindnode",
