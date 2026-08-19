@@ -351,3 +351,8 @@ _nvm_default_bin=("$NVM_DIR"/versions/node/v${_nvm_default}*/bin(Nn[-1]))
 [[ -n $_nvm_default_bin ]] && path=($_nvm_default_bin $path)
 unset _nvm_default _nvm_default_bin
 nvm() { unset -f nvm; . "$NVM_DIR/nvm.sh" --no-use; nvm "$@"; }
+
+# Mise
+if command -v mise 1>/dev/null 2>&1; then
+  eval "$(mise activate zsh)"
+fi
