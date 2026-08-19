@@ -264,8 +264,8 @@ alias ncdu="ncdu --color dark"
 alias htop="sudo htop"
 alias nproc="sysctl -n hw.logicalcpu"
 alias bup="brew update"
-alias bupg="brew upgrade"
-alias bupc="brew cleanup -s"
+alias bupg="brew upgrade --yes; clickhouse-update"
+alias bupc="brew cleanup --scrub"
 
 if command -v bat &> /dev/null; then
 	export BAT_THEME="Solarized (dark)"
@@ -321,6 +321,17 @@ function omz-update-custom() {
 		fi
 	done
 	popd
+}
+
+function clickhouse-update() {
+  echo "Updating ClickHouse.."
+  local channel="${1:-stable}" keep="${2:-2}" active
+  clickhousectl local use "$channel" || return 1
+  active="$(clickhousectl local which 2>/dev/null | grep -oE '[0-9]+(\.[0-9]+){2,3}' | head -n1)"
+  [[ -n "$active" ]] || { echo "could not determine active version, removing nothing" >&2; return 1; }
+  find ~/.clickhouse/versions -mindepth 1 -maxdepth 1 -type d -exec basename {} \; \
+    | sort -Vr | tail -n +$((keep + 1)) | grep -vx "$active" \
+    | while read -r v; do echo "removing $v"; clickhousectl local remove "$v"; done
 }
 
 # Verify prerequisites
