@@ -123,6 +123,7 @@ export HOMEBREW_NO_AUTO_UPDATE=true
 export HOMEBREW_NO_ENV_HINTS=true
 export HOMEBREW_NO_ANALYTICS=true
 export HOMEBREW_BAT=true
+export HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS=true
 export HOMEBREW_UPGRADE_GREEDY_CASKS="claude-code"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
