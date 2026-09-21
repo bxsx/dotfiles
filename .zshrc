@@ -79,8 +79,8 @@ source $ZSH/oh-my-zsh.sh
 #export TERM=xterm-256color
 
 # fix invisible colors
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=fg=10
-export ZSH_HIGHLIGHT_STYLES[comment]=fg=8
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=fg=10
+ZSH_HIGHLIGHT_STYLES[comment]=fg=8
 
 #export YSU_MESSAGE_POSITION="after"
 
