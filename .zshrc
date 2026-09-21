@@ -151,6 +151,8 @@ if which pyenv-virtualenv-init > /dev/null; then
 fi
 #alias pyenv-poetry="$DEVDIR/scripts/pyenv-poetry/pyenv-poetry.sh"
 
+unalias pup # disable poetry update -- in conflict with datadog-pup
+
 # CPython
 # Configure to compile Python in debug mode:
 # - use -C to use a config.cache in the current directory
