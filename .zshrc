@@ -318,13 +318,24 @@ function omz-update-custom() {
 }
 
 function clickhouse-update() {
-  echo "Updating ClickHouse.."
-  local channel="${1:-stable}" keep="${2:-2}" active
+  local channel="${1:-stable}" keep="${2:-2}" before after
+
+  before="$(clickhousectl local which 2>/dev/null | grep -oE '[0-9]+(\.[0-9]+){2,3}' | head -n1)"
+
+  echo "Checking for ClickHouse updates (${channel})..."
   clickhousectl local use "$channel" || return 1
-  active="$(clickhousectl local which 2>/dev/null | grep -oE '[0-9]+(\.[0-9]+){2,3}' | head -n1)"
-  [[ -n "$active" ]] || { echo "could not determine active version, removing nothing" >&2; return 1; }
+
+  after="$(clickhousectl local which 2>/dev/null | grep -oE '[0-9]+(\.[0-9]+){2,3}' | head -n1)"
+  [[ -n "$after" ]] || { echo "could not determine active version, removing nothing" >&2; return 1; }
+
+  if [[ "$before" == "$after" ]]; then
+    echo "Already up to date: $after"
+  else
+    echo "Updated: ${before:-none} -> $after"
+  fi
+
   find ~/.clickhouse/versions -mindepth 1 -maxdepth 1 -type d -exec basename {} \; \
-    | sort -Vr | tail -n +$((keep + 1)) | grep -vx "$active" \
+    | sort -Vr | tail -n +$((keep + 1)) | grep -vx "$after" \
     | while read -r v; do echo "removing $v"; clickhousectl local remove "$v"; done
 }
 
