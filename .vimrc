@@ -1,4 +1,5 @@
 set nocompatible              " be iMproved, required
+set t_RB= t_RF=               " fix startup issue with no rendering UI until a key pressed
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
